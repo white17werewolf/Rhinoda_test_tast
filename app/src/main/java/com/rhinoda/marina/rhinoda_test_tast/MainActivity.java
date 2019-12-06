@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Switch sw;
     String  strYasha = "Яша кушал кашу";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,19 +31,10 @@ public class MainActivity extends AppCompatActivity {
         img = findViewById(R.id.imageView);
         sw = findViewById(R.id.switch1);
 
-        View.OnClickListener listener = new View.OnClickListener(){
 
-            @Override
-            public void  onClick(View v)
-            {
-                strYasha.split(" ");
+        btn.setOnClickListener(v -> strYasha.split(" "));
 
-
-            }
-        };
-        btn.setOnClickListener(listener);}
-
-
-
-
+        sw.setOnCheckedChangeListener((buttonView, isChecked) -> { img.setVisibility(isChecked ? View.VISIBLE :  View.GONE); });
+    }
 }
+
