@@ -13,5 +13,11 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.test_default_page_activity);
         bottomNavMenu = findViewById(R.id.menu);
     }
+
+
 }
+
+
+
+
 
