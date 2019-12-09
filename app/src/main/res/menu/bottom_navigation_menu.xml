@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/login"
+        android:id="@+id/bottomNavLogin"
+        android:icon="@drawable/ic_launcher_background"/>
+    <item android:title="@string/avents"
+        android:id="@+id/bottomNavAvents"
+        android:icon="@drawable/ic_launcher_foreground"/>
+    <item android:title="@string/profile"
+        android:id="@+id/bottomNavProfile"
+        android:icon="@drawable/ic_launcher_background"/>
+</menu>
