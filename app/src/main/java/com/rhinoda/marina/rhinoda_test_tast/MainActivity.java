@@ -1,17 +1,16 @@
 package com.rhinoda.marina.rhinoda_test_tast;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
 
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 //item 1.10
-        sw.setOnCheckedChangeListener((buttonView, isChecked) -> {img.setVisibility(isChecked ? View.VISIBLE :  View.GONE); });
+        sw.setOnCheckedChangeListener((buttonView, isChecked) -> img.setVisibility(isChecked ? View.VISIBLE :  View.GONE));
 
         editTxt.addTextChangedListener(new TextWatcher() {
             @Override
