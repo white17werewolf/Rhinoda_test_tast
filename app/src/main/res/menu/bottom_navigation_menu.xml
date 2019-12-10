@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/login"
         android:id="@+id/bottomNavLogin"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/ic_arrow_drop_down_circle_black_24dp"/>
     <item android:title="@string/avents"
         android:id="@+id/bottomNavAvents"
-        android:icon="@drawable/ic_launcher_foreground"/>
+        android:icon="@drawable/ic_change_history_black_24dp"/>
     <item android:title="@string/profile"
         android:id="@+id/bottomNavProfile"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/ic_accessibility_black_24dp"/>
 </menu>
