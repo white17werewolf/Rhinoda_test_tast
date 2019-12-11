@@ -6,14 +6,20 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.rhinoda.marina.rhinoda_test_tast.fragment.AventFragment;
+
+import java.util.List;
 
 public class SecondActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView bottomNavMenu;
     FrameLayout frameLayout;
     ViewPager viewPager;
+    RecyclerView recyclerView;
+    List<AventFragment> listItems;
 
 
 
@@ -24,6 +30,8 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
         bottomNavMenu = findViewById(R.id.menu);
         viewPager = findViewById(R.id.viewPager);
         frameLayout = findViewById(R.id.frame);
+
+        recyclerView = findViewById(R.id.recyclerView);
 
         SecondActivityAdapter myAdapter = new SecondActivityAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myAdapter);
@@ -43,7 +51,7 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
                 viewPager.setCurrentItem(2);
                 break;
         }
-        // getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, selectedFragment).commit();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, selectedFragment).commit();
         return true;
     }
 }
