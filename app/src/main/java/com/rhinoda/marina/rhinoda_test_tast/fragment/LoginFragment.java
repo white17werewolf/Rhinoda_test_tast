@@ -37,12 +37,7 @@ public class LoginFragment extends Fragment {
         password = view.findViewById(R.id.password);
         btnLogIn = view.findViewById(R.id.btnLogIn);
 
-        btnLogIn.setOnClickListener(v -> {
-            validate();
-/*            String toastEmail, toastPass;
-            toastEmail = !ValEmail(email.getText()) ? "No Valid Email" : "Valid email";
-            toastPass = ValPassword(password.getText()) ? "No Valid Password" : "Valid Password";*/
-        });
+        btnLogIn.setOnClickListener(v ->  validate());
     }
 
     public boolean ValEmail(CharSequence email){
@@ -54,7 +49,7 @@ public class LoginFragment extends Fragment {
         return !TextUtils.isEmpty(password) && password.length() > 5;
     }
 
-    public void tost(String message){
+    public void toast(String message){
         Toast.makeText(getContext(),
                 message,
                 Toast.LENGTH_SHORT)
@@ -64,25 +59,25 @@ public class LoginFragment extends Fragment {
     public void validate(){
 
         if (!ValEmail(email.getText()) && !ValPassword(password.getText())){
-            tost("No Valid Email && Password");
+            toast("No Valid Email && Password");
             Log.d("validate", "1");
             return;
         }
 
         if (!ValEmail(email.getText())) {
-            tost("No Valid Email");
+            toast("No Valid Email");
             Log.d("validate", "2");
             return;
 
         }
         if (!ValPassword(password.getText())) {
-            tost("No Valid Password");
+            toast("No Valid Password");
             Log.d("validate", "3");
             return;
 
         }
 
-        tost("ok");
+        toast("ok");
         Log.d("validate", "4");
     }
 

@@ -27,4 +27,10 @@ public class SecondActivityAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return 3;
     }
+
+
+
+
+
+
 }
