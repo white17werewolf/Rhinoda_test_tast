@@ -1,28 +1,43 @@
 package com.rhinoda.marina.rhinoda_test_tast;
 
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class RecycleItem {
 
-    private String title;
-    private String description;
+    TextView txtName;
+    TextView txtData;
+    TextView txtPost;
+    TextView txtLikers;
+    TextView txtLikes;
+    TextView txtComments;
+    ImageView avatar;
+    ImageView imgPost;
+    ImageView imgLikers;
+    ImageView imgLike;
+    ImageView imgComment;
+    ImageView imgShare;
 
-    public RecycleItem(String title, String description) {
-        this.title = title;
-        this.description = description;
+
+
+    public RecycleItem(TextView txtName, TextView txtData) {
+        this.txtName = txtName;
+        this.txtData = txtData;
     }
 
     public String getTitle() {
-        return title;
+        return String.valueOf(txtName.getText());
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.txtName = txtName;
     }
 
     public String getDescription() {
-        return description;
+        return String.valueOf(txtData);
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.txtData = txtData;
     }
 }

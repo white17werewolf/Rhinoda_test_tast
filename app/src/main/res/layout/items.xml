@@ -19,7 +19,7 @@
             android:layout_marginHorizontal="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/icon"
+                android:id="@+id/imgAvatar"
                 style="@style/ImageViewAvatar"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -28,33 +28,33 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/txtName"
                 style="@style/TextView.Name"
                 android:text="Name Surname"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/icon"
+                app:layout_constraintStart_toEndOf="@+id/imgAvatar"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/txtData"
                 style="@style/TextView.Date"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Date"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/icon"
-                app:layout_constraintTop_toBottomOf="@+id/name" />
+                app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+                app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
             <TextView
-                android:id="@+id/post"
+                android:id="@+id/txtPost"
                 style="@style/TextView.Post"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Post"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/icon" />
+                app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
 
             <ImageView
                 android:id="@+id/imgPost"
@@ -64,24 +64,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/post"
+                app:layout_constraintTop_toBottomOf="@+id/txtPost"
                 tools:srcCompat="@tools:sample/avatars[14]" />
 
             <ImageView
-                android:id="@+id/imgLikesMan"
+                android:id="@+id/imgLikers"
                 style="@style/ImageViewLikesMan"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgPost"
                 app:srcCompat="@drawable/ic_person_outline_black_24dp" />
 
             <TextView
-                android:id="@+id/txtLikesMan"
+                android:id="@+id/txtLikers"
                 style="@style/TextView.LikesMan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Likers"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imgLikesMan"
+                app:layout_constraintStart_toEndOf="@+id/imgLikers"
                 app:layout_constraintTop_toBottomOf="@+id/imgPost" />
 
             <ImageView
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikesMan"
+                app:layout_constraintTop_toBottomOf="@+id/txtLikers"
                 app:srcCompat="@drawable/ic_filter_vintage_black_24dp" />
 
             <TextView
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="3"
                 app:layout_constraintStart_toEndOf="@+id/imgLikes"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikesMan" />
+                app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
 
             <ImageView
                 android:id="@+id/imgComments"
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/txtLikes"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikesMan"
+                app:layout_constraintTop_toBottomOf="@+id/txtLikers"
                 app:srcCompat="@drawable/ic_comment_black_24dp" />
 
             <TextView
@@ -119,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:text="6"
                 app:layout_constraintStart_toEndOf="@+id/imgComments"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikesMan" />
+                app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
 
             <ImageView
                 android:id="@+id/imgShare"
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/txtComments"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikesMan"
+                app:layout_constraintTop_toBottomOf="@+id/txtLikers"
                 app:srcCompat="@drawable/ic_share_black_24dp" />
 
 

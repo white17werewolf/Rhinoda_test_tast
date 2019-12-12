@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -31,7 +32,8 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
         viewPager = findViewById(R.id.viewPager);
         frameLayout = findViewById(R.id.frame);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        //recyclerView = findViewById(R.id.recyclerView);
+        initRecyclerView();
 
         SecondActivityAdapter myAdapter = new SecondActivityAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myAdapter);
@@ -53,6 +55,11 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
         }
         //getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, selectedFragment).commit();
         return true;
+    }
+
+    private void initRecyclerView() {
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
 
