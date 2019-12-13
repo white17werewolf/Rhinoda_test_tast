@@ -1,6 +1,5 @@
 package com.rhinoda.marina.rhinoda_test_tast;
 
-import android.content.Context;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,25 +7,27 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder> {
 
-    Context mContext;
-    List<RecycleItem> recycleItemList;
-    LayoutInflater inflater;
+    List<RecycleItem> items;
 
-    public AventAdapter(Context mContext, List<RecycleItem> recycleItemList, Fragment fragment){
+
+    public void addAll(List<RecycleItem> items){
+        this.items = items;
+        notifyDataSetChanged();
+    }
+    /*public AventAdapter(Context mContext, List<RecycleItem> recycleItemList){
 
         this.mContext = mContext;
         this.recycleItemList = recycleItemList;
         this.inflater = LayoutInflater.from(mContext);
     }
 
-    /*public void setItems(Collection<RecycleItem> posts) {
+    public void setItems(Collection<RecycleItem> posts) {
         recycleItemList.addAll(posts);
         notifyDataSetChanged();
     }
@@ -39,7 +40,7 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.items, parent, false);
+                .inflate(R.layout.item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -49,7 +50,7 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return recycleItemList.size();
+        return items.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
