@@ -1,38 +1,45 @@
 package com.rhinoda.marina.rhinoda_test_tast;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder> {
 
-    //private List<RecycleItem> listItems;
-    private Context mContext;
-    private List<RecycleItem> recycleItemList = new ArrayList<>();
+    Context mContext;
+    List<RecycleItem> recycleItemList;
+    LayoutInflater inflater;
 
-    public void setItems(Collection<RecycleItem> tweets) {
-        recycleItemList.addAll(tweets);
+    public AventAdapter(Context mContext, List<RecycleItem> recycleItemList, Fragment fragment){
+
+        this.mContext = mContext;
+        this.recycleItemList = recycleItemList;
+        this.inflater = LayoutInflater.from(mContext);
+    }
+
+    /*public void setItems(Collection<RecycleItem> posts) {
+        recycleItemList.addAll(posts);
         notifyDataSetChanged();
     }
 
     public void clearItems() {
         recycleItemList.clear();
         notifyDataSetChanged();
-    }
+    }*/
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.avent, parent, false);
+                .inflate(R.layout.items, parent, false);
         return new ViewHolder(view);
     }
 
@@ -46,38 +53,39 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtName;
-        TextView txtData;
-        TextView txtPost;
-        TextView txtLikers;
-        TextView txtLikes;
-        TextView txtComments;
-        ImageView imgAvatar;
-        ImageView imgPost;
-        ImageView imgLikers;
-        ImageView imgLikes;
-        ImageView imgComments;
-        ImageView imgShare;
+            TextView txtName;
+            TextView txtData;
+            TextView txtPost;
+            TextView txtLikers;
+            TextView txtLikes;
+            TextView txtComments;
+            TextView txtShare;
+            ImageView imgAvatar;
+            ImageView imgPost;
 
-    public ViewHolder(View itemView) {
-            super(itemView);
-            txtName = itemView.findViewById(R.id.txtName);
-            txtData = itemView.findViewById(R.id.txtData);
-            txtPost = itemView.findViewById(R.id.txtPost);
-            txtLikers = itemView.findViewById(R.id.txtLikers);
-            txtLikes = itemView.findViewById(R.id.txtLikes);
-            txtComments = itemView.findViewById(R.id.txtComments);
-            imgAvatar = itemView.findViewById(R.id.imgAvatar);
-            imgPost= itemView.findViewById(R.id.imgPost);
-            imgLikers= itemView.findViewById(R.id.imgLikers);
-            imgLikes = itemView.findViewById(R.id.imgLikes);
-            imgComments = itemView.findViewById(R.id.imgComments);
-            imgShare = itemView.findViewById(R.id.imgShare);
-        }
+    public ViewHolder(View view) {
+        super(view);
+
+        txtName = view.findViewById(R.id.txtName);
+        txtData = view.findViewById(R.id.txtData);
+        txtPost = view.findViewById(R.id.txtPost);
+        txtLikers = view.findViewById(R.id.txtLikers);
+        txtLikes = view.findViewById(R.id.txtLikes);
+        txtComments = view.findViewById(R.id.txtComments);
+        imgAvatar = view.findViewById(R.id.imgAvatar);
+        imgPost= view.findViewById(R.id.imgPost);
+        txtShare = view.findViewById(R.id.txtShare);
     }
-
-    public AventAdapter(List<RecycleItem> recycleItemList, Context mContext) {
-        this.recycleItemList = recycleItemList;
-        this.mContext = mContext;
+        public void bind(RecycleItem recycleItem) {
+            txtName.setText(recycleItem.getTxtName());
+            txtData.setText(recycleItem.getTxtData());
+            txtPost.setText(recycleItem.getTxtPost());
+            txtLikers.setText(recycleItem.getTxtLikers());
+            txtLikes.setText(recycleItem.getTxtLikes());
+            txtComments.setText(recycleItem.getTxtComments());
+            txtShare.setText(recycleItem.getTxtShare());
+            imgAvatar.setImageURI(Uri.parse(recycleItem.getURLimgAvatar()));
+            imgPost.setImageURI(Uri.parse(recycleItem.getURLimgPost()));
+}
     }
 }

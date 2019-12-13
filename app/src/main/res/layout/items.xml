@@ -7,130 +7,135 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginVertical= "10dp"
-            android:layout_marginHorizontal="20dp">
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgAvatar"
-                style="@style/ImageViewAvatar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@mipmap/ic_launcher"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp">
 
-            <TextView
-                android:id="@+id/txtName"
-                style="@style/TextView.Name"
-                android:text="Name Surname"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/imgAvatar"
-                app:layout_constraintTop_toTopOf="parent" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgAvatar"
+                    style="@style/ImageViewAvatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/txtData"
-                style="@style/TextView.Date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imgAvatar"
-                app:layout_constraintTop_toBottomOf="@+id/txtName" />
+                <TextView
+                    android:id="@+id/txtName"
+                    style="@style/TextView.Name"
+                    android:text="Name Surname"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/txtPost"
-                style="@style/TextView.Post"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Post"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
+                <TextView
+                    android:id="@+id/txtData"
+                    style="@style/TextView.Date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
-            <ImageView
-                android:id="@+id/imgPost"
-                style="@style/ImageView"
-                android:layout_marginTop="8dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPost"
-                tools:srcCompat="@tools:sample/avatars[14]" />
+                <TextView
+                    android:id="@+id/txtPost"
+                    style="@style/TextView.Post"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Post"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
 
-            <ImageView
-                android:id="@+id/imgLikers"
-                style="@style/ImageViewLikesMan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgPost"
-                app:srcCompat="@drawable/ic_person_outline_black_24dp" />
+                <ImageView
+                    android:id="@+id/imgPost"
+                    style="@style/ImageView"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPost"
+                    tools:srcCompat="@tools:sample/avatars[14]" />
 
-            <TextView
-                android:id="@+id/txtLikers"
-                style="@style/TextView.LikesMan"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Likers"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imgLikers"
-                app:layout_constraintTop_toBottomOf="@+id/imgPost" />
-
-            <ImageView
-                android:id="@+id/imgLikes"
-                style="@style/ImageViewLikesMan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikers"
-                app:srcCompat="@drawable/ic_filter_vintage_black_24dp" />
-
-            <TextView
-
-                android:id="@+id/txtLikes"
-                style="@style/TextView.Numbers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"
-                app:layout_constraintStart_toEndOf="@+id/imgLikes"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
-
-            <ImageView
-                android:id="@+id/imgComments"
-                style="@style/ImageViewLikesMan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@+id/txtLikes"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikers"
-                app:srcCompat="@drawable/ic_comment_black_24dp" />
-
-            <TextView
-                android:id="@+id/txtComments"
-                style="@style/TextView.Numbers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="6"
-                app:layout_constraintStart_toEndOf="@+id/imgComments"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
-
-            <ImageView
-                android:id="@+id/imgShare"
-                style="@style/ImageViewLikesMan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@+id/txtComments"
-                app:layout_constraintTop_toBottomOf="@+id/txtLikers"
-                app:srcCompat="@drawable/ic_share_black_24dp" />
+                <TextView
+                    android:id="@+id/txtLikers"
+                    style="@style/TextView.LikesMan"
+                    android:layout_width="366dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                    android:drawableTint="@color/colorViolet"
+                    android:text="Likers"
+                    app:layout_constraintBottom_toTopOf="@+id/txtLikes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgPost" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/txtLikes"
+                    style="@style/TextView.Numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_filter_vintage_black_24dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="#340669"
+                    android:gravity="center"
+                    android:text="3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
+
+
+                <TextView
+                    android:id="@+id/txtComments"
+                    style="@style/TextView.Numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_comment_black_24dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="#340669"
+                    android:gravity="center"
+                    android:text="6"
+                    app:layout_constraintStart_toEndOf="@+id/txtLikes"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
+
+
+                <TextView
+                    android:id="@+id/txtShare"
+                    style="@style/TextView.Numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_share_black_24dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="#340669"
+                    android:gravity="center"
+                    android:text="12"
+                    app:layout_constraintStart_toEndOf="@+id/txtComments"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
