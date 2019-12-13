@@ -2,6 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -75,7 +76,8 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtPost"
-                    app:srcCompat="@drawable/ic_palette_black_24dp" />
+                    app:srcCompat="@drawable/ic_palette_black_24dp"
+                    tools:ignore="VectorDrawableCompat" />
 
                 <TextView
                     android:id="@+id/txtLikers"

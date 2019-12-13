@@ -1,6 +1,5 @@
 package com.rhinoda.marina.rhinoda_test_tast;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,28 +13,18 @@ import java.util.List;
 public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder> {
 
     List<RecycleItem> items;
+    RecycleItem tmp;
 
 
     public void addAll(List<RecycleItem> items){
         this.items = items;
         notifyDataSetChanged();
     }
-    /*public AventAdapter(Context mContext, List<RecycleItem> recycleItemList){
 
-        this.mContext = mContext;
-        this.recycleItemList = recycleItemList;
-        this.inflater = LayoutInflater.from(mContext);
+    public void setItems(List<RecycleItem> items){
+        this.items = items;
+
     }
-
-    public void setItems(Collection<RecycleItem> posts) {
-        recycleItemList.addAll(posts);
-        notifyDataSetChanged();
-    }
-
-    public void clearItems() {
-        recycleItemList.clear();
-        notifyDataSetChanged();
-    }*/
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -46,6 +35,8 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.init(items.get(position));
+
     }
 
     @Override
@@ -76,8 +67,9 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
         imgAvatar = view.findViewById(R.id.imgAvatar);
         imgPost= view.findViewById(R.id.imgPost);
         txtShare = view.findViewById(R.id.txtShare);
-    }
-        public void bind(RecycleItem recycleItem) {
+        }
+
+        public void init(RecycleItem recycleItem) {
             txtName.setText(recycleItem.getTxtName());
             txtData.setText(recycleItem.getTxtData());
             txtPost.setText(recycleItem.getTxtPost());
@@ -85,8 +77,11 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
             txtLikes.setText(recycleItem.getTxtLikes());
             txtComments.setText(recycleItem.getTxtComments());
             txtShare.setText(recycleItem.getTxtShare());
-            imgAvatar.setImageURI(Uri.parse(recycleItem.getURLimgAvatar()));
-            imgPost.setImageURI(Uri.parse(recycleItem.getURLimgPost()));
-}
+
+            //imgAvatar.
+
+            imgPost.setImageDrawable(recycleItem.getURLimgAvatar());
+            imgPost.setImageDrawable(recycleItem.getURLimgPost());
+        }
     }
 }
