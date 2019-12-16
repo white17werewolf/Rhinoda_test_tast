@@ -69,15 +69,15 @@
 
                 <ImageView
                     android:id="@+id/imgPost"
-                    style="@style/ImageView"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="250dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
                     android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtPost"
-                    app:srcCompat="@drawable/ic_palette_black_24dp"
-                    tools:ignore="VectorDrawableCompat" />
+                    android:src="@mipmap/ic_launcher" />
 
                 <TextView
                     android:id="@+id/txtLikers"
@@ -94,7 +94,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imgPost" />
 
-
                 <TextView
                     android:id="@+id/txtLikes"
                     style="@style/TextView.Numbers"
@@ -102,12 +101,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_filter_vintage_black_24dp"
                     android:drawablePadding="3dp"
-                    android:drawableTint="#340669"
+                    android:drawableTint="@color/colorViolet"
                     android:gravity="center"
                     android:text="3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
-
 
                 <TextView
                     android:id="@+id/txtComments"
@@ -116,12 +114,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_comment_black_24dp"
                     android:drawablePadding="3dp"
-                    android:drawableTint="#340669"
+                    android:drawableTint="@color/colorViolet"
                     android:gravity="center"
                     android:text="6"
                     app:layout_constraintStart_toEndOf="@+id/txtLikes"
                     app:layout_constraintTop_toBottomOf="@+id/txtLikers" />
-
 
                 <TextView
                     android:id="@+id/txtShare"
@@ -130,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_share_black_24dp"
                     android:drawablePadding="3dp"
-                    android:drawableTint="#340669"
+                    android:drawableTint="@color/colorViolet"
                     android:gravity="center"
                     android:text="12"
                     app:layout_constraintStart_toEndOf="@+id/txtComments"

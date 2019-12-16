@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+//todo replace EventAdapter
 public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder> {
 
     List<RecycleItem> items;
@@ -29,13 +30,28 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item, parent, false);
+                .inflate(R.layout.item_post, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.init(items.get(position));
+       /* holder.init(items.get(position));*/
+        RecycleItem recycleItem = items.get(position);
+
+
+        /////////
+        holder.txtName.setText(recycleItem.getTxtName());
+        holder.txtData.setText(recycleItem.getTxtData());
+        holder.txtPost.setText(recycleItem.getTxtPost());
+        holder.txtLikers.setText(recycleItem.getTxtLikers());
+        holder.txtLikes.setText(recycleItem.getTxtLikes());
+        holder.txtComments.setText(recycleItem.getTxtComments());
+        holder.txtShare.setText(recycleItem.getTxtShare());
+
+
+        holder.imgPost.setImageResource(recycleItem.getImgAvatar());
+        holder.imgPost.setImageResource(recycleItem.getImgPost());
 
     }
 
@@ -69,19 +85,5 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
         txtShare = view.findViewById(R.id.txtShare);
         }
 
-        public void init(RecycleItem recycleItem) {
-            txtName.setText(recycleItem.getTxtName());
-            txtData.setText(recycleItem.getTxtData());
-            txtPost.setText(recycleItem.getTxtPost());
-            txtLikers.setText(recycleItem.getTxtLikers());
-            txtLikes.setText(recycleItem.getTxtLikes());
-            txtComments.setText(recycleItem.getTxtComments());
-            txtShare.setText(recycleItem.getTxtShare());
-
-            //imgAvatar.
-
-            imgPost.setImageDrawable(recycleItem.getURLimgAvatar());
-            imgPost.setImageDrawable(recycleItem.getURLimgPost());
-        }
     }
 }

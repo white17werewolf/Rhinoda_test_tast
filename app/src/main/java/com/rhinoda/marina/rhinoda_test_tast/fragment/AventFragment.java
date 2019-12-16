@@ -1,8 +1,5 @@
 package com.rhinoda.marina.rhinoda_test_tast.fragment;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,10 +22,12 @@ public class AventFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.ViewHolder holder;
 
+    int imageRes = R.drawable.bg_post_event;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.avent, container, false);
+        return inflater.inflate(R.layout.fragmant_avent, container, false);
     }
 
     @Override
@@ -39,29 +38,7 @@ public class AventFragment extends Fragment {
         recyclerView.setAdapter(aventAdapter);
         aventAdapter.addAll(getData());
         aventAdapter.setItems(getData());
-        }
-
-    Drawable tmp =  new Drawable() {
-        @Override
-        public void draw(@NonNull Canvas canvas) {
-
-        }
-
-        @Override
-        public void setAlpha(int alpha) {
-
-        }
-
-        @Override
-        public void setColorFilter(@Nullable ColorFilter colorFilter) {
-
-        }
-
-        @Override
-        public int getOpacity() {
-            return 0;
-        }
-    };
+    }
 
 
     public  List<RecycleItem> getData(){
@@ -75,8 +52,8 @@ public class AventFragment extends Fragment {
                 100,
                 20,
                 65,
-                tmp,
-                tmp));
+                imageRes,
+                imageRes));
         data.add(new RecycleItem(
                 "Theo",
                 "Hutchcraft",
@@ -85,18 +62,18 @@ public class AventFragment extends Fragment {
                 150,
                 10,
                 70,
-                tmp,
-                tmp));
+                imageRes,
+                imageRes));
         data.add(new RecycleItem(
-                "",
-                "",
-                "",
-                "",
+                "Name",
+                "data",
+                "Post",
+                "Peoples",
                 0,
                 0,
                 0,
-                tmp,
-                tmp));
+                imageRes,
+                imageRes));
         return data;
 
 

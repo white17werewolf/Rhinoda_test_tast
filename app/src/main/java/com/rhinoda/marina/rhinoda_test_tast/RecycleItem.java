@@ -1,7 +1,5 @@
 package com.rhinoda.marina.rhinoda_test_tast;
 
-import android.graphics.drawable.Drawable;
-
 public class RecycleItem {
 
     String txtName;
@@ -11,8 +9,8 @@ public class RecycleItem {
     int txtLikes;
     int txtComments;
     int txtShare;
-    Drawable URLimgAvatar;
-    Drawable URLimgPost;
+    int imgAvatar;
+    int imgPost;
 
 
     public RecycleItem(String txtName,
@@ -22,8 +20,8 @@ public class RecycleItem {
                        int txtLikes,
                        int txtComments,
                        int txtShare,
-                       Drawable URLimgAvatar,
-                       Drawable URLimgPost) {
+                       int imgAvatar,
+                       int imgPost) {
         this.txtName = txtName;
         this.txtData = txtData;
         this.txtPost = txtPost;
@@ -31,8 +29,8 @@ public class RecycleItem {
         this.txtLikes = txtLikes;
         this.txtComments = txtComments;
         this.txtShare = txtShare;
-        this.URLimgAvatar = URLimgAvatar;
-        this.URLimgPost = URLimgPost;
+        this.imgAvatar = imgAvatar;
+        this.imgPost = imgPost;
     }
 
     public String getTxtName() {return txtName;}
@@ -55,11 +53,11 @@ public class RecycleItem {
     public String getTxtShare() {return String.valueOf(txtShare);}
     public void setTxtShare(int share) {txtLikes=share;}
 
-    public Drawable getURLimgAvatar() {return URLimgAvatar;}
-    public void setImgAvatar(Drawable avatar) {URLimgAvatar = avatar;}
+    public int getImgAvatar() {return imgAvatar;}
+    public void setImgAvatar(int avatar) {imgAvatar = avatar;}
 
-    public Drawable getURLimgPost() {return URLimgPost;}
-    public void setImgPost(Drawable post) {URLimgPost=post;}
+    public int getImgPost() {return imgPost;}
+    public void setImgPost(int post) {imgPost=post;}
 
 
 }
