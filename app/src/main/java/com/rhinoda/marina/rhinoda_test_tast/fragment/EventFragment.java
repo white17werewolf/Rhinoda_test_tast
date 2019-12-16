@@ -42,32 +42,31 @@ public class EventFragment extends Fragment {
         eventAdapter.setItems(getData());
     }
 
-
     public  List<Post> getData(){
         List<Post> data = new ArrayList<>();
 
         data.add(new Post(
-                "Adam",
-                "Anderson",
-                "qwertyu",
+                "Adam Anderson",
+                "Yesterday 9:20 p.m.",
+                "Here we are again!",
                 "Theo, Pette, Chenai",
                 100,
                 20,
                 65,
-                imageRes,
-                imageRes));
+                R.drawable.adam,
+                R.drawable.mcw));
         data.add(new Post(
-                "Theo",
-                "Hutchcraft",
-                "qwertyu",
+                "Theo Hutchcraft",
+                "Today 8:20 a.m.",
+                "Regular Monday",
                 "Russian girls",
                 150,
                 10,
                 70,
-                imageRes,
-                imageRes));
+                R.drawable.theo,
+                R.drawable.pub));
         data.add(new Post(
-                "Name",
+                "Name Surname",
                 "data",
                 "Post",
                 "Peoples",

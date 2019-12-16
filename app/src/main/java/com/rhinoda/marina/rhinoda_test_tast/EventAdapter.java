@@ -40,8 +40,6 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
        /* holder.init(items.get(position));*/
         Post recycleItem = items.get(position);
 
-
-        /////////
         holder.txtName.setText(recycleItem.getTxtName());
         holder.txtData.setText(recycleItem.getTxtData());
         holder.txtPost.setText(recycleItem.getTxtPost());
@@ -49,9 +47,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         holder.txtLikes.setText(recycleItem.getTxtLikes());
         holder.txtComments.setText(recycleItem.getTxtComments());
         holder.txtShare.setText(recycleItem.getTxtShare());
-
-
-        holder.imgPost.setImageResource(recycleItem.getImgAvatar());
+        holder.imgAvatar.setImageResource(recycleItem.getImgAvatar());
         holder.imgPost.setImageResource(recycleItem.getImgPost());
 
     }

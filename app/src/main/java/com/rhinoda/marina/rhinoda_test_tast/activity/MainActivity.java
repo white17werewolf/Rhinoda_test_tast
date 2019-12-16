@@ -9,11 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.rhinoda.marina.rhinoda_test_tast.R;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -26,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.switch1) Switch sw;
     String  strYasha = "Яша кушал кашу";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +30,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Intent intent = new Intent(this, SecondActivity.class);
 
-
 //item 1.9
         txt.setText(strYasha);
         btn.setOnClickListener(v -> {strYasha.split(" ");
         //COMBINATION
         });
-
 
 //item 1.10
         sw.setOnCheckedChangeListener((buttonView, isChecked) -> img.setVisibility(isChecked ? View.VISIBLE :  View.GONE));
@@ -56,11 +50,9 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 btn.setText(editTxt.getText());} });
 
-
 //item 1.11
         img.setOnClickListener(v -> startActivity(intent));
     }
-
 
     /*public  Integer factorial(int n){
         return (n>0)?n*factorial(n-1):1;
