@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Rhinoda_test_tast</string>
     <string name="login">Login</string>
-    <string name="avents">Avents</string>
+    <string name="events">Events</string>
     <string name="profile">Profile</string>
     <string name="items">
         <item>Item 1</item>

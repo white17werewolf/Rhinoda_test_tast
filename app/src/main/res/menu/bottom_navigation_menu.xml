@@ -3,7 +3,7 @@
     <item android:title="@string/login"
         android:id="@+id/bottomNavLogin"
         android:icon="@drawable/ic_arrow_drop_down_circle_black_24dp"/>
-    <item android:title="@string/avents"
+    <item android:title="@string/events"
         android:id="@+id/bottomNavAvents"
         android:icon="@drawable/ic_change_history_black_24dp"/>
     <item android:title="@string/profile"

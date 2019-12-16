@@ -8,21 +8,22 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rhinoda.marina.rhinoda_test_tast.model.Post;
+
 import java.util.List;
 
 //todo replace EventAdapter
-public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder> {
+public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder> {
 
-    List<RecycleItem> items;
-    RecycleItem tmp;
+    List<Post> items;
 
 
-    public void addAll(List<RecycleItem> items){
+    public void addAll(List<Post> items){
         this.items = items;
         notifyDataSetChanged();
     }
 
-    public void setItems(List<RecycleItem> items){
+    public void setItems(List<Post> items){
         this.items = items;
 
     }
@@ -37,7 +38,7 @@ public class AventAdapter extends RecyclerView.Adapter <AventAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
        /* holder.init(items.get(position));*/
-        RecycleItem recycleItem = items.get(position);
+        Post recycleItem = items.get(position);
 
 
         /////////

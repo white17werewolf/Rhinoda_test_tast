@@ -17,11 +17,20 @@ import androidx.fragment.app.Fragment;
 
 import com.rhinoda.marina.rhinoda_test_tast.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class LoginFragment extends Fragment {
 
+
+    @BindView(R.id.email)
     EditText email;
+
+    @BindView(R.id.password)
     EditText password;
-    Button btnLogIn;
+
+    @BindView(R.id.btnLogIn)
+        Button btnLogIn;
 
     @Nullable
     @Override
@@ -33,9 +42,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated( View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        email = view.findViewById(R.id.email);
-        password = view.findViewById(R.id.password);
-        btnLogIn = view.findViewById(R.id.btnLogIn);
+        ButterKnife.bind(this, view);
 
         btnLogIn.setOnClickListener(v ->  validate());
     }
@@ -68,18 +75,15 @@ public class LoginFragment extends Fragment {
             toast("No Valid Email");
             Log.d("validate", "2");
             return;
-
         }
+
         if (!ValPassword(password.getText())) {
             toast("No Valid Password");
             Log.d("validate", "3");
             return;
-
         }
 
         toast("ok");
         Log.d("validate", "4");
     }
-
-
 }

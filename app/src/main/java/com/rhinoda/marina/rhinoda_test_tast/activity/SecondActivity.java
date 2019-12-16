@@ -1,27 +1,33 @@
-package com.rhinoda.marina.rhinoda_test_tast;
+package com.rhinoda.marina.rhinoda_test_tast.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.rhinoda.marina.rhinoda_test_tast.R;
+import com.rhinoda.marina.rhinoda_test_tast.SecondActivityAdapter;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class SecondActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    @BindView(R.id.menu)
     BottomNavigationView bottomNavMenu;
-    FrameLayout frameLayout;
-    ViewPager viewPager;
+
+    @BindView(R.id.viewPager)
+     ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_default_page_activity);
-        bottomNavMenu = findViewById(R.id.menu);
-        viewPager = findViewById(R.id.viewPager);
-        frameLayout = findViewById(R.id.frame);
+
+        ButterKnife.bind(this);
 
         SecondActivityAdapter myAdapter = new SecondActivityAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myAdapter);
@@ -41,7 +47,6 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
                 viewPager.setCurrentItem(2);
                 break;
         }
-        //getSupportFragmentManager().beginTransaction().replace(R.id.viewPager, selectedFragment).commit();
         return true;
     }
 }

@@ -10,41 +10,43 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhinoda.marina.rhinoda_test_tast.AventAdapter;
+import com.rhinoda.marina.rhinoda_test_tast.EventAdapter;
 import com.rhinoda.marina.rhinoda_test_tast.R;
-import com.rhinoda.marina.rhinoda_test_tast.RecycleItem;
+import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AventFragment extends Fragment {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
+public class EventFragment extends Fragment {
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    RecyclerView.ViewHolder holder;
 
     int imageRes = R.drawable.bg_post_event;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragmant_avent, container, false);
+        return inflater.inflate(R.layout.fragmant_event, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerView = view.findViewById(R.id.recyclerView);
-        AventAdapter aventAdapter = new AventAdapter();
-        recyclerView.setAdapter(aventAdapter);
-        aventAdapter.addAll(getData());
-        aventAdapter.setItems(getData());
+        ButterKnife.bind(this, view);
+        EventAdapter eventAdapter = new EventAdapter();
+        recyclerView.setAdapter(eventAdapter);
+        eventAdapter.addAll(getData());
+        eventAdapter.setItems(getData());
     }
 
 
-    public  List<RecycleItem> getData(){
-        List<RecycleItem> data = new ArrayList<>();
+    public  List<Post> getData(){
+        List<Post> data = new ArrayList<>();
 
-        data.add(new RecycleItem(
+        data.add(new Post(
                 "Adam",
                 "Anderson",
                 "qwertyu",
@@ -54,7 +56,7 @@ public class AventFragment extends Fragment {
                 65,
                 imageRes,
                 imageRes));
-        data.add(new RecycleItem(
+        data.add(new Post(
                 "Theo",
                 "Hutchcraft",
                 "qwertyu",
@@ -64,7 +66,7 @@ public class AventFragment extends Fragment {
                 70,
                 imageRes,
                 imageRes));
-        data.add(new RecycleItem(
+        data.add(new Post(
                 "Name",
                 "data",
                 "Post",

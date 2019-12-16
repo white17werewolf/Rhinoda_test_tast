@@ -1,6 +1,6 @@
-package com.rhinoda.marina.rhinoda_test_tast;
+package com.rhinoda.marina.rhinoda_test_tast.model;
 
-public class RecycleItem {
+public class Post {
 
     String txtName;
     String txtData;
@@ -12,8 +12,7 @@ public class RecycleItem {
     int imgAvatar;
     int imgPost;
 
-
-    public RecycleItem(String txtName,
+    public Post(String txtName,
                        String txtData,
                        String txtPost,
                        String txtLikers,

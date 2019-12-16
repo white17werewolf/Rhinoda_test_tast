@@ -1,4 +1,4 @@
-package com.rhinoda.marina.rhinoda_test_tast;
+package com.rhinoda.marina.rhinoda_test_tast.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,29 +11,27 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.rhinoda.marina.rhinoda_test_tast.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
-
-    Button btn;
-    TextView txt;
-    EditText editTxt;
-    ImageView img;
-    Switch sw;
+    @BindView(R.id.button) Button btn;
+    @BindView(R.id.textView) TextView txt;
+    @BindView(R.id.editText) EditText editTxt;
+    @BindView(R.id.imageView)  ImageView img;
+    @BindView(R.id.switch1) Switch sw;
     String  strYasha = "Яша кушал кашу";
 
-
-   // int count = factorial(strYasha.length());
-    // int shift = strYasha.length();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_default_view_activity);
-        btn = findViewById(R.id.button);
-        txt = findViewById(R.id.textView);
-        editTxt = findViewById(R.id.editText);
-        img = findViewById(R.id.imageView);
-        sw = findViewById(R.id.switch1);
+        ButterKnife.bind(this);
         Intent intent = new Intent(this, SecondActivity.class);
 
 
