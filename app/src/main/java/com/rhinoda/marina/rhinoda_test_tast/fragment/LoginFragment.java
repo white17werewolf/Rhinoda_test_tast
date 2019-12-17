@@ -1,9 +1,6 @@
 package com.rhinoda.marina.rhinoda_test_tast.fragment;
 
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.rhinoda.marina.rhinoda_test_tast.ILoginView;
+import com.rhinoda.marina.rhinoda_test_tast.Presenter.LoginPresenter;
 import com.rhinoda.marina.rhinoda_test_tast.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginFragment extends Fragment {
-
+public class LoginFragment extends Fragment implements ILoginView {
 
     @BindView(R.id.email)
     EditText email;
@@ -30,7 +28,7 @@ public class LoginFragment extends Fragment {
     EditText password;
 
     @BindView(R.id.btnLogIn)
-        Button btnLogIn;
+    Button btnLogIn;
 
     @Nullable
     @Override
@@ -44,10 +42,19 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
-        btnLogIn.setOnClickListener(v ->  validate());
+        final LoginPresenter loginPresenter =new LoginPresenter(this);
+
+
+        btnLogIn.setOnClickListener(v -> loginPresenter.onLogin(email.getText().toString(), password.getText().toString()));
     }
 
-    public boolean ValEmail(CharSequence email){
+    @Override
+    public void onLoginStatus(String message) {
+        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+    }
+
+    /*public boolean ValEmail(CharSequence email){
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
@@ -85,5 +92,5 @@ public class LoginFragment extends Fragment {
 
         toast("ok");
         Log.d("validate", "4");
-    }
-}
+    }*/
+

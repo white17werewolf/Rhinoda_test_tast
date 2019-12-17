@@ -37,7 +37,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-       /* holder.init(items.get(position));*/
+        /* holder.init(items.get(position));*/
         Post recycleItem = items.get(position);
 
         holder.txtName.setText(recycleItem.getTxtName());
@@ -58,28 +58,28 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-            TextView txtName;
-            TextView txtData;
-            TextView txtPost;
-            TextView txtLikers;
-            TextView txtLikes;
-            TextView txtComments;
-            TextView txtShare;
-            ImageView imgAvatar;
-            ImageView imgPost;
+        TextView txtName;
+        TextView txtData;
+        TextView txtPost;
+        TextView txtLikers;
+        TextView txtLikes;
+        TextView txtComments;
+        TextView txtShare;
+        ImageView imgAvatar;
+        ImageView imgPost;
 
-    public ViewHolder(View view) {
-        super(view);
+        public ViewHolder(View view) {
+            super(view);
 
-        txtName = view.findViewById(R.id.txtName);
-        txtData = view.findViewById(R.id.txtData);
-        txtPost = view.findViewById(R.id.txtPost);
-        txtLikers = view.findViewById(R.id.txtLikers);
-        txtLikes = view.findViewById(R.id.txtLikes);
-        txtComments = view.findViewById(R.id.txtComments);
-        imgAvatar = view.findViewById(R.id.imgAvatar);
-        imgPost= view.findViewById(R.id.imgPost);
-        txtShare = view.findViewById(R.id.txtShare);
+            txtName = view.findViewById(R.id.txtName);
+            txtData = view.findViewById(R.id.txtData);
+            txtPost = view.findViewById(R.id.txtPost);
+            txtLikers = view.findViewById(R.id.txtLikers);
+            txtLikes = view.findViewById(R.id.txtLikes);
+            txtComments = view.findViewById(R.id.txtComments);
+            imgAvatar = view.findViewById(R.id.imgAvatar);
+            imgPost= view.findViewById(R.id.imgPost);
+            txtShare = view.findViewById(R.id.txtShare);
         }
 
     }

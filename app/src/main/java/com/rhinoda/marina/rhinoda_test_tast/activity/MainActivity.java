@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 //item 1.9
         txt.setText(strYasha);
         btn.setOnClickListener(v -> {strYasha.split(" ");
-        //COMBINATION
+            //COMBINATION
         });
 
 //item 1.10

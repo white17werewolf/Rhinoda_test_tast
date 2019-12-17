@@ -20,7 +20,7 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
     BottomNavigationView bottomNavMenu;
 
     @BindView(R.id.viewPager)
-     ViewPager viewPager;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
