@@ -1,6 +1,6 @@
 package com.rhinoda.marina.rhinoda_test_tast.Presenter;
 
-import com.rhinoda.marina.rhinoda_test_tast.EventAdapter;
+import com.rhinoda.marina.rhinoda_test_tast.IEvenView;
 import com.rhinoda.marina.rhinoda_test_tast.R;
 import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 
@@ -9,15 +9,11 @@ import java.util.List;
 
 public class EventPresenter implements IEventPresenter {
 
-    public EventAdapter onPost() {
-        EventAdapter eventAdapter = new EventAdapter();
-        eventAdapter.addAll(getData());
-        eventAdapter.setItems(getData());
+     private IEvenView evenView;
 
-        return eventAdapter;
-    }
+    public EventPresenter(IEvenView evenView){ this.evenView = evenView;}
 
-    public List<Post> getData() {
+    public void getData() {
         List<Post> data = new ArrayList<>();
 
         data.add(new Post(
@@ -50,6 +46,7 @@ public class EventPresenter implements IEventPresenter {
                 0,
                 R.drawable.bg_post_event,
                 R.drawable.bg_post_event));
-        return data;
+
+        evenView.update(data);
     }
 }

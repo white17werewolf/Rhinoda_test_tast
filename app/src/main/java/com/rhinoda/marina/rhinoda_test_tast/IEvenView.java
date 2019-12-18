@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IEvenView {
     void postIt(List<Post> items);
+    void update(List<Post> items);
 }

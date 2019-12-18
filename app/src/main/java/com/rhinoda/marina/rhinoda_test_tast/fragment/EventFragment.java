@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rhinoda.marina.rhinoda_test_tast.EventAdapter;
 import com.rhinoda.marina.rhinoda_test_tast.IEvenView;
 import com.rhinoda.marina.rhinoda_test_tast.Presenter.EventPresenter;
 import com.rhinoda.marina.rhinoda_test_tast.R;
@@ -25,6 +26,10 @@ public class EventFragment extends Fragment implements IEvenView {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
+    EventAdapter eventAdapter;
+    EventPresenter presenter;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,16 +41,20 @@ public class EventFragment extends Fragment implements IEvenView {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
-        EventPresenter eventPresenter = new EventPresenter();
-        eventPresenter.onPost();
-        recyclerView.setAdapter(eventPresenter.onPost());
+        eventAdapter = new EventAdapter();
+        recyclerView.setAdapter(eventAdapter);
 
+        presenter = new EventPresenter(this);
+        presenter.getData();
     }
-
 
     @Override
     public void postIt(List<Post> items) {
         Log.d("postIt","2");
+    }
 
+    @Override
+    public void update(List<Post> items) {
+        eventAdapter.update(items);
     }
 }

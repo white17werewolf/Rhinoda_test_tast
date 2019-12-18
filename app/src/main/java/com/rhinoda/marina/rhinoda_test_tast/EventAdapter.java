@@ -8,25 +8,24 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rhinoda.marina.rhinoda_test_tast.Presenter.EventPresenter;
 import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 
+import java.util.ArrayList;
 import java.util.List;
 
-//todo replace EventAdapter
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder> {
 
-    List<Post> items;
+    List<Post> items = new ArrayList<>();
+    EventPresenter eventPresenter;
 
-    //ADD***************************************************************************
-    public void addAll(List<Post> items){
+    public void update(List<Post> items){
         this.items = items;
         notifyDataSetChanged();
     }
-
-    public void setItems(List<Post> items){
-        this.items = items;
-    }
-    //ADD***************************************************************************
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -55,31 +54,22 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         return items.size();
     }
 
-
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtName;
-        TextView txtData;
-        TextView txtPost;
-        TextView txtLikers;
-        TextView txtLikes;
-        TextView txtComments;
-        TextView txtShare;
-        ImageView imgAvatar;
-        ImageView imgPost;
+        @BindView(R.id.txtName) TextView txtName;
+        @BindView(R.id.txtData) TextView txtData;
+        @BindView(R.id.txtPost) TextView txtPost;
+        @BindView(R.id.txtLikers) TextView txtLikers;
+        @BindView(R.id.txtLikes) TextView txtLikes;
+        @BindView(R.id.txtComments) TextView txtComments;
+        @BindView(R.id.txtShare) TextView txtShare;
+        @BindView(R.id.imgAvatar) ImageView imgAvatar;
+        @BindView(R.id.imgPost) ImageView imgPost;
 
         public ViewHolder(View view) {
             super(view);
-
-            txtName = view.findViewById(R.id.txtName);
-            txtData = view.findViewById(R.id.txtData);
-            txtPost = view.findViewById(R.id.txtPost);
-            txtLikers = view.findViewById(R.id.txtLikers);
-            txtLikes = view.findViewById(R.id.txtLikes);
-            txtComments = view.findViewById(R.id.txtComments);
-            imgAvatar = view.findViewById(R.id.imgAvatar);
-            imgPost= view.findViewById(R.id.imgPost);
-            txtShare = view.findViewById(R.id.txtShare);
+            ButterKnife.bind(this, view);
         }
-
     }
+
+    
 }
