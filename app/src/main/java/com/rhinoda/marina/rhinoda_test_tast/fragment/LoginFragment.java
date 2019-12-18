@@ -43,8 +43,6 @@ public class LoginFragment extends Fragment implements ILoginView {
         ButterKnife.bind(this, view);
 
         final LoginPresenter loginPresenter =new LoginPresenter(this);
-
-
         btnLogIn.setOnClickListener(v -> loginPresenter.onLogin(email.getText().toString(), password.getText().toString()));
     }
 
@@ -53,44 +51,4 @@ public class LoginFragment extends Fragment implements ILoginView {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
     }
-
-    /*public boolean ValEmail(CharSequence email){
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
-
-
-    public boolean ValPassword(CharSequence password){
-        return !TextUtils.isEmpty(password) && password.length() > 5;
-    }
-
-    public void toast(String message){
-        Toast.makeText(getContext(),
-                message,
-                Toast.LENGTH_SHORT)
-                .show();
-    }
-
-    public void validate(){
-
-        if (!ValEmail(email.getText()) && !ValPassword(password.getText())){
-            toast("No Valid Email && Password");
-            Log.d("validate", "1");
-            return;
-        }
-
-        if (!ValEmail(email.getText())) {
-            toast("No Valid Email");
-            Log.d("validate", "2");
-            return;
-        }
-
-        if (!ValPassword(password.getText())) {
-            toast("No Valid Password");
-            Log.d("validate", "3");
-            return;
-        }
-
-        toast("ok");
-        Log.d("validate", "4");
-    }*/
 

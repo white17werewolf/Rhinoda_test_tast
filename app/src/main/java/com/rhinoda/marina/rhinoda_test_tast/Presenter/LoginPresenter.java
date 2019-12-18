@@ -28,7 +28,5 @@ public class LoginPresenter implements ILoginPresenter {
         }
         if(isLoginSuccess==-1){
             loginView.onLoginStatus("Ok");}
-
-
     }
 }

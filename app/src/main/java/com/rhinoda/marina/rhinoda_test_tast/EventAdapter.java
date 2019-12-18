@@ -17,7 +17,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
 
     List<Post> items;
 
-
+    //ADD***************************************************************************
     public void addAll(List<Post> items){
         this.items = items;
         notifyDataSetChanged();
@@ -25,8 +25,8 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
 
     public void setItems(List<Post> items){
         this.items = items;
-
     }
+    //ADD***************************************************************************
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -37,7 +37,6 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        /* holder.init(items.get(position));*/
         Post recycleItem = items.get(position);
 
         holder.txtName.setText(recycleItem.getTxtName());
@@ -49,13 +48,13 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         holder.txtShare.setText(recycleItem.getTxtShare());
         holder.imgAvatar.setImageResource(recycleItem.getImgAvatar());
         holder.imgPost.setImageResource(recycleItem.getImgPost());
-
     }
 
     @Override
     public int getItemCount() {
         return items.size();
     }
+
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtName;

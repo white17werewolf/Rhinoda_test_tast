@@ -1,26 +1,28 @@
 package com.rhinoda.marina.rhinoda_test_tast.model;
 
-public class Post {
+public class Post implements IPost{
 
-    String txtName;
-    String txtData;
-    String txtPost;
-    String txtLikers;
-    int txtLikes;
-    int txtComments;
-    int txtShare;
-    int imgAvatar;
-    int imgPost;
+    private String txtName;
+    private String txtData;
+    private String txtPost;
+    private String txtLikers;
+    private int txtLikes;
+    private int txtComments;
+    private int txtShare;
+    private int imgAvatar;
+    private int imgPost;
 
     public Post(String txtName,
-                       String txtData,
-                       String txtPost,
-                       String txtLikers,
-                       int txtLikes,
-                       int txtComments,
-                       int txtShare,
-                       int imgAvatar,
-                       int imgPost) {
+                String txtData,
+                String txtPost,
+                String txtLikers,
+                int txtLikes,
+                int txtComments,
+                int txtShare,
+                int imgAvatar,
+                int imgPost) {
+
+
         this.txtName = txtName;
         this.txtData = txtData;
         this.txtPost = txtPost;
@@ -37,8 +39,9 @@ public class Post {
     public String getTxtData() {return txtData;}
     public void setTxtData(String data) {txtData = data;}
 
+
     public String getTxtPost() {return txtPost;}
-   public void setTxtPost(String post) {txtPost=post;}
+    public void setTxtPost(String post) {txtPost=post;}
 
     public String getTxtLikers() {return txtLikers;}
     public void setTxtLikers(String likers) {txtLikers=likers;}
@@ -57,6 +60,5 @@ public class Post {
 
     public int getImgPost() {return imgPost;}
     public void setImgPost(int post) {imgPost=post;}
-
 
 }
