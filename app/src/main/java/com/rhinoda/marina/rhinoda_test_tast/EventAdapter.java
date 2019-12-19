@@ -72,17 +72,20 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
                 int like = Integer.parseInt(recycleItem.getTxtLikes())-1;
                 recycleItem.setTxtLikes(like);
                 recycleItem.isLike = false;
-                callback.like(Integer.parseInt(recycleItem.getTxtLikes()));
+                holder.txtLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_noliked,0,0,0);
             }
 
             else {
                 int like = Integer.parseInt(recycleItem.getTxtLikes())+1;
                 recycleItem.setTxtLikes(like);
                 recycleItem.isLike = true;
-                callback.like(Integer.parseInt(recycleItem.getTxtLikes()));
-                }
+                holder.txtLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_liked,0,0,0);
+            }
 
-            //callback.like(Integer.parseInt(recycleItem.getTxtLikes()));
+            callback.like(Integer.parseInt(recycleItem.getTxtLikes()));
+            holder.txtLikes.setText(recycleItem.getTxtLikes());
+
+
         });
     }
 
