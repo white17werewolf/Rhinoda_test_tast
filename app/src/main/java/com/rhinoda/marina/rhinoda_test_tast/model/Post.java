@@ -11,6 +11,7 @@ public class Post implements IPost{
     private int txtShare;
     private int imgAvatar;
     private int imgPost;
+    public boolean isLike = false;
 
     public Post(String txtName,
                 String txtData,
@@ -47,7 +48,24 @@ public class Post implements IPost{
     public void setTxtLikers(String likers) {txtLikers=likers;}
 
     public String getTxtLikes() {return String.valueOf(txtLikes);}
+
+
+
+
+
+
+
     public void setTxtLikes(int likes) {txtLikes=likes;}
+
+
+
+
+
+
+
+
+
+
 
     public String getTxtComments() {return String.valueOf(txtComments);}
     public void setTxtComments(int comments) { txtComments = comments;}

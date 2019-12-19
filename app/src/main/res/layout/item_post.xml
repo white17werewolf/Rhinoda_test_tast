@@ -99,7 +99,7 @@
                     style="@style/TextView.Numbers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_filter_vintage_black_24dp"
+                    android:drawableLeft="@drawable/ic_noliked"
                     android:drawablePadding="3dp"
                     android:drawableTint="@color/colorViolet"
                     android:gravity="center"

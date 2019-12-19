@@ -9,7 +9,7 @@ import java.util.List;
 
 public class EventPresenter implements IEventPresenter {
 
-     private IEvenView evenView;
+    private IEvenView evenView;
 
     public EventPresenter(IEvenView evenView){ this.evenView = evenView;}
 
@@ -49,4 +49,5 @@ public class EventPresenter implements IEventPresenter {
 
         evenView.update(data);
     }
+
 }

@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhinoda.marina.rhinoda_test_tast.Presenter.EventPresenter;
 import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 
 import java.util.ArrayList;
@@ -19,13 +18,32 @@ import butterknife.ButterKnife;
 
 public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder> {
 
+    IActionView callback;
+
     List<Post> items = new ArrayList<>();
-    EventPresenter eventPresenter;
+    private ViewHolder holder;
+
+    public void setOnClickCallback(IActionView callback){
+        this.callback = callback;
+    }
 
     public void update(List<Post> items){
         this.items = items;
         notifyDataSetChanged();
     }
+
+/*    public void setLike(int like){
+        holder.txtLikes.setText(String.valueOf(like));
+
+    }
+    public void setComment(int comment){
+        holder.txtLikes.setText(String.valueOf(comment));
+    }
+    public void setShare(int share){
+        holder.txtLikes.setText(String.valueOf(share));
+    }*/
+
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -47,11 +65,34 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         holder.txtShare.setText(recycleItem.getTxtShare());
         holder.imgAvatar.setImageResource(recycleItem.getImgAvatar());
         holder.imgPost.setImageResource(recycleItem.getImgPost());
+
+
+        holder.txtLikes.setOnClickListener(v->{
+            if (recycleItem.isLike){
+                int like = Integer.parseInt(recycleItem.getTxtLikes())-1;
+                recycleItem.setTxtLikes(like);
+                recycleItem.isLike = false;
+                callback.like(Integer.parseInt(recycleItem.getTxtLikes()));
+            }
+
+            else {
+                int like = Integer.parseInt(recycleItem.getTxtLikes())+1;
+                recycleItem.setTxtLikes(like);
+                recycleItem.isLike = true;
+                callback.like(Integer.parseInt(recycleItem.getTxtLikes()));
+                }
+
+            //callback.like(Integer.parseInt(recycleItem.getTxtLikes()));
+        });
     }
 
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    public void setHolder(ViewHolder holder) {
+        this.holder = holder;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -71,5 +112,5 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         }
     }
 
-    
+
 }
