@@ -17,31 +17,25 @@
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:gravity="top"
-        app:menu="@menu/top_navigation_bar">
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/btnBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_arrow_left_black"
-            android:layout_weight="0"/>
+            style="@style/TopNavButton"
+            android:background="@drawable/ic_arrow_left_black"/>
 
         <TextView
             android:id="@+id/txtNickname"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Nickname"
+            android:text="dimazaycev"
             android:gravity="center"
             android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btnMore"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_more_horiz_black"
-            android:layout_weight="0"/>
+            style="@style/TopNavButton"
+            android:background="@drawable/ic_more_horiz_black"/>
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -135,6 +129,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgAvatar">
 
@@ -147,7 +142,7 @@
                 android:text="16k"
                 app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtOnlineStatus" />
+                app:layout_constraintTop_toBottomOf="@+id/txtOnlineStatus"/>
 
             <TextView
                 android:id="@+id/txtRating"
@@ -159,6 +154,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/colorLightGrey"
+            android:layout_gravity="center"/>
 
         <LinearLayout
             style="@style/LinearLayoutNumbers">
@@ -181,6 +182,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/colorLightGrey"
+            android:layout_gravity="center"/>
+
         <LinearLayout
             style="@style/LinearLayoutNumbers">
             <TextView
@@ -201,6 +208,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/colorLightGrey"
+            android:layout_gravity="center"/>
 
         <LinearLayout
             style="@style/LinearLayoutNumbers">
@@ -223,32 +236,37 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
-
     </LinearLayout>
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorLightGrey"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:layout_editor_absoluteX="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:padding="10dp">
 
         <Button
             style="@style/Button"
             android:id="@+id/btnWriteMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Написать" />
 
         <Button
             style="@style/Button"
             android:id="@+id/btnAddFriend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Добавить в друзья" />
+            android:text="Добавить в друзья"
+            android:layout_marginLeft="10dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

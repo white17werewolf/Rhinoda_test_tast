@@ -68,6 +68,8 @@
         <item name="android:textSize">20dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="TextView.ProfileDescription">
@@ -77,28 +79,38 @@
         <item name="android:layout_centerInParent">true</item>
         <item name="android:layout_width">15dp</item>
         <item name="android:textSize">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">0</item>
     </style>
 
     <style name="Button">
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:background">@color/colorViolet</item>
+        <item name="android:background">@drawable/button_style_profile</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:layout_height">15dp</item>
-        <item name="android:layout_width">15dp</item>
-        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">100dp</item>
     </style>
 
     <style name="LinearLayoutNumbers">
-        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
     </style>
+
     <style name="Icons">
         <item name="android:layout_width">20dp</item>
         <item name="android:layout_height">20dp</item>
-        <item name="android:tint">@color/colorViolet</item>
+        <item name="android:tint">@color/colorLightViolet</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="TopNavButton">
+        <item name="android:backgroundTint">@color/colorViolet</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
     </style>
 
 </resources>
