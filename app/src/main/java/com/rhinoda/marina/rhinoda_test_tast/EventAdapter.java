@@ -31,19 +31,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         this.items = items;
         notifyDataSetChanged();
     }
-
-/*    public void setLike(int like){
-        holder.txtLikes.setText(String.valueOf(like));
-
-    }
-    public void setComment(int comment){
-        holder.txtLikes.setText(String.valueOf(comment));
-    }
-    public void setShare(int share){
-        holder.txtLikes.setText(String.valueOf(share));
-    }*/
-
-
+    
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -57,7 +45,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         Post recycleItem = items.get(position);
 
         holder.txtName.setText(recycleItem.getTxtName());
-        holder.txtData.setText(recycleItem.getTxtData());
+        holder.txtDate.setText(recycleItem.getTxtDate());
         holder.txtPost.setText(recycleItem.getTxtPost());
         holder.txtLikers.setText(recycleItem.getTxtLikers());
         holder.txtLikes.setText(recycleItem.getTxtLikes());
@@ -87,6 +75,46 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
 
 
         });
+
+        holder.txtComments.setOnClickListener(v->{
+            if (recycleItem.isComment){
+                int comments = Integer.parseInt(recycleItem.getTxtComments())-1;
+                recycleItem.setTxtComments(comments);
+                recycleItem.isComment = false;
+            }
+
+            else {
+                int comments = Integer.parseInt(recycleItem.getTxtComments())+1;
+                recycleItem.setTxtComments(comments);
+                recycleItem.isComment = true;
+            }
+
+            callback.comment(Integer.parseInt(recycleItem.getTxtComments()));
+            holder.txtComments.setText(recycleItem.getTxtComments());
+        });
+
+
+
+
+       /* holder.txtShare.setOnClickListener(v->{
+            if (recycleItem.isShare){
+                int share = Integer.parseInt(recycleItem.getTxtShare())-1;
+                recycleItem.setTxtShare(share);
+                recycleItem.isShare = false;
+                callback.share(Integer.parseInt(recycleItem.getTxtShare()));
+                holder.txtShare.setText(recycleItem.getTxtShare());
+            }
+
+            else {
+                int share = Integer.parseInt(recycleItem.getTxtShare())+1;
+                recycleItem.setTxtShare(share);
+                recycleItem.isComment = true;
+                callback.share(Integer.parseInt(recycleItem.getTxtShare()));
+                holder.txtShare.setText(recycleItem.getTxtShare());
+            }
+
+
+        });*/
     }
 
     @Override
@@ -100,7 +128,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
 
     class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.txtName) TextView txtName;
-        @BindView(R.id.txtData) TextView txtData;
+        @BindView(R.id.txtDate) TextView txtDate;
         @BindView(R.id.txtPost) TextView txtPost;
         @BindView(R.id.txtLikers) TextView txtLikers;
         @BindView(R.id.txtLikes) TextView txtLikes;

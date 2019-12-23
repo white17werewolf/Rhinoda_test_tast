@@ -4,28 +4,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-    android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            tools:srcCompat="@tools:sample/avatars[0]" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:gravity="top"
+        app:menu="@menu/top_navigation_bar">
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_noliked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:background="@drawable/ic_arrow_left_black"
+            android:layout_weight="0"/>
+
+        <TextView
+            android:id="@+id/txtNickname"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Nickname"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnMore"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_more_horiz_black"
+            android:layout_weight="0"/>
+    </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgAvatar"
@@ -33,61 +50,85 @@
         android:layout_height="150dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/adam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgOnline"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@color/colorGreenOnline"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar" />
+
     <TextView
         android:id="@+id/txtName"
-        style="@style/TextView.Name"
-        android:text="Name Surname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Дмитрий Зайцев"
+        android:textColor="@color/colorBlack"
+        android:textSize="25dp"
         app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar" />
 
-        <TextView
-            android:id="@+id/txtData"
-            style="@style/TextView.Date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Date"
-            app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtName" />
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtOnlineStatus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:textColor="@color/colorLightGrey"
+        android:textSize="15dp"
+        android:text="online"
         app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtData" />
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="24 года, Тула, Россия"
+        android:textColor="@color/colorBlack"
         app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtOnlineStatus" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="На отдыхе!"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        app:layout_constraintTop_toBottomOf="@+id/info" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        android:id="@+id/imgVK"
+        android:src="@drawable/vk"
+        style="@style/Icons"
+        android:layout_marginLeft="-10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imgIG"
+        style="@style/Icons"
+        android:src="@drawable/ig"
+        app:layout_constraintStart_toEndOf="@+id/imgVK"
+        app:layout_constraintTop_toBottomOf="@+id/txtStatus"/>
+
+    <ImageView
+        android:id="@+id/imgFB"
+        style="@style/Icons"
+        android:src="@drawable/fb"
+        app:layout_constraintStart_toEndOf="@+id/imgIG"
+        app:layout_constraintTop_toBottomOf="@+id/txtStatus" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -98,101 +139,92 @@
         app:layout_constraintTop_toBottomOf="@+id/imgAvatar">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtData" />
+            style="@style/LinearLayoutNumbers">
 
             <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                style="@style/TextView.ProfileNumbers"
+                android:id="@+id/txtNumberRating"
+                android:text="16k"
                 app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/txtOnlineStatus" />
+
+            <TextView
+                android:id="@+id/txtRating"
+                style="@style/TextView.ProfileDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Рейтинг"
+                app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            style="@style/LinearLayoutNumbers">
             <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                style="@style/TextView.ProfileNumbers"
+                android:id="@+id/txtNumberFriends"
+                android:text="147"
                 app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtData" />
+                app:layout_constraintTop_toBottomOf="@+id/txtOnlineStatus" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/txtFriends"
+                style="@style/TextView.ProfileDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="друзья"
                 app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            style="@style/LinearLayoutNumbers">
             <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                style="@style/TextView.ProfileNumbers"
+                android:id="@+id/txtNumberFollowers"
+                android:text="32k"
                 app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtData" />
+                app:layout_constraintTop_toBottomOf="@+id/txtOnlineStatus" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/txtFollowers"
+                style="@style/TextView.ProfileDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="подписчики"
                 app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtData" />
+            style="@style/LinearLayoutNumbers">
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                style="@style/TextView.ProfileNumbers"
+                android:id="@+id/txtNumberCheck"
+                android:text="32"
                 app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/txtOnlineStatus" />
+
+            <TextView
+                android:id="@+id/txtCheck"
+                style="@style/TextView.ProfileDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="чекины"
+                app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info" />
         </LinearLayout>
 
     </LinearLayout>
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -203,18 +235,20 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/button4"
+            style="@style/Button"
+            android:id="@+id/btnWriteMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Написать" />
 
         <Button
-            android:id="@+id/button5"
+            style="@style/Button"
+            android:id="@+id/btnAddFriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Добавить в друзья" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

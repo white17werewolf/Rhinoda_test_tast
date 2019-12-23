@@ -46,11 +46,8 @@ public class EventFragment extends Fragment implements IEvenView, IActionView {
         eventAdapter = new EventAdapter();
         eventAdapter.setOnClickCallback(this);
         recyclerView.setAdapter(eventAdapter);
-
         presenter = new EventPresenter(this);
         presenter.getData();
-
-
 
     }
 

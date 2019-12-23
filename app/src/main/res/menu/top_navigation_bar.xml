@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title=" "
+        android:id="@+id/navBack"
+        android:icon="@drawable/ic_arrow_left_black"/>
+    <item android:title="nickname"
+        android:id="@+id/NavNickname" />
+    <item android:title=" "
+        android:id="@+id/bottomNavProfile"
+        android:icon="@drawable/ic_more_horiz_black"/>
+</menu>

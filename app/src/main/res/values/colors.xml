@@ -6,4 +6,7 @@
     <color name="colorViolet">#311B92</color>
     <color name="colorLightGrey">#757575</color>
     <color name="colorDarkBlue">#0F2766</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorGreenOnline">#43A047</color>
 </resources>

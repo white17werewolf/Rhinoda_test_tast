@@ -3,7 +3,7 @@ package com.rhinoda.marina.rhinoda_test_tast.model;
 public class Post implements IPost{
 
     private String txtName;
-    private String txtData;
+    private String txtDate;
     private String txtPost;
     private String txtLikers;
     private int txtLikes;
@@ -12,9 +12,11 @@ public class Post implements IPost{
     private int imgAvatar;
     private int imgPost;
     public boolean isLike = false;
+    public boolean isComment = false;
+    public boolean isShare = false;
 
     public Post(String txtName,
-                String txtData,
+                String txtDate,
                 String txtPost,
                 String txtLikers,
                 int txtLikes,
@@ -25,7 +27,7 @@ public class Post implements IPost{
 
 
         this.txtName = txtName;
-        this.txtData = txtData;
+        this.txtDate = txtDate;
         this.txtPost = txtPost;
         this.txtLikers = txtLikers;
         this.txtLikes = txtLikes;
@@ -37,8 +39,8 @@ public class Post implements IPost{
 
     public String getTxtName() {return txtName;}
 
-    public String getTxtData() {return txtData;}
-    public void setTxtData(String data) {txtData = data;}
+    public String getTxtDate() {return txtDate;}
+    public void setTxtData(String data) {txtDate = data;}
 
 
     public String getTxtPost() {return txtPost;}
@@ -48,24 +50,7 @@ public class Post implements IPost{
     public void setTxtLikers(String likers) {txtLikers=likers;}
 
     public String getTxtLikes() {return String.valueOf(txtLikes);}
-
-
-
-
-
-
-
     public void setTxtLikes(int likes) {txtLikes=likes;}
-
-
-
-
-
-
-
-
-
-
 
     public String getTxtComments() {return String.valueOf(txtComments);}
     public void setTxtComments(int comments) { txtComments = comments;}

@@ -2,7 +2,7 @@ package com.rhinoda.marina.rhinoda_test_tast.model;
 
 public interface IPost {
     String getTxtName();
-    String getTxtData();
+    String getTxtDate();
     String getTxtPost();
     String getTxtLikers();
     String getTxtLikes();

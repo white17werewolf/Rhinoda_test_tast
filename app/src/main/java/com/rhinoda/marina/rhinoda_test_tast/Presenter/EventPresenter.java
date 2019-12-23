@@ -38,7 +38,7 @@ public class EventPresenter implements IEventPresenter {
                 R.drawable.pub));
         data.add(new Post(
                 "Name Surname",
-                "data",
+                "Date",
                 "Post",
                 "Peoples",
                 0,
