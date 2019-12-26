@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,16 +14,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.rhinoda.marina.rhinoda_test_tast.R;
-import com.rhinoda.marina.rhinoda_test_tast.try_retrofit.Api;
-import com.rhinoda.marina.rhinoda_test_tast.try_retrofit.JsonTest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         img.setOnClickListener(v -> startActivity(intent));
 
 
-        Retrofit retrofit = new Retrofit.Builder()
+        /*Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Api.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -81,24 +73,10 @@ public class MainActivity extends AppCompatActivity {
         Api api = retrofit.create(Api.class);
         Call<JsonTest> call = api.getJson("0");
 
-        /* ****************** TEST
-            call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.d("name", "onResponse");
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.d("name", "onFailure");
-            }
-        });*/ 
-        
         call.enqueue(new Callback<JsonTest>() {
             @Override
             public void onResponse(Call<JsonTest> call, Response<JsonTest> response) {
-                JsonTest   t = response.body();
-                //JsonTest t = new JsonTest(tmp.string());
+                JsonTest  t = response.body();
                    Log.d("Address ", t.getAddress());
                     Log.d("Email ", t.getEmail());
                     Log.d("Full name ", t.getFull_name());
@@ -108,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
          @Override
             public void onFailure(Call<JsonTest> call, Throwable t) {
-                txt.setText(t.getMessage());
-                //Toast.makeText(getApplicationContext(),  t.getMessage(), Toast.LENGTH_LONG).show();
-             Log.d("Loser", "Loser"); }
-        });
+                Toast.makeText(getApplicationContext(),  t.getMessage(), Toast.LENGTH_LONG).show();}
+        });*/
+
+
 
     }
 }

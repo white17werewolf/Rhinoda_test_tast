@@ -32,6 +32,7 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
         SecondActivityAdapter myAdapter = new SecondActivityAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myAdapter);
         bottomNavMenu.setOnNavigationItemSelectedListener(this);
+
     }
 
     @Override

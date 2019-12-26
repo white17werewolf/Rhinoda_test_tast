@@ -11,6 +11,8 @@ public class Post implements IPost{
     private int txtShare;
     private int imgAvatar;
     private int imgPost;
+
+
     public boolean isLike = false;
     public boolean isComment = false;
     public boolean isShare = false;

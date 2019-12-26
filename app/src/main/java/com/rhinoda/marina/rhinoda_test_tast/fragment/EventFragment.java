@@ -49,6 +49,7 @@ public class EventFragment extends Fragment implements IEvenView, IActionView {
         presenter = new EventPresenter(this);
         presenter.getData();
 
+
     }
 
     @Override
