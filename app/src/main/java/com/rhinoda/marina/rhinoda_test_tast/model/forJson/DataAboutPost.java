@@ -3,8 +3,7 @@ package com.rhinoda.marina.rhinoda_test_tast.model.forJson;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DataExample  {
-
+public class DataAboutPost  {
 
     @SerializedName("post_id")
     @Expose

@@ -12,7 +12,7 @@ public class Data {
     private Integer status;
     @SerializedName("response")
     @Expose
-    private List<DataExample> response;
+    private List<DataAboutPost> response;
 
     public Integer getStatus() {
         return status;
@@ -22,11 +22,11 @@ public class Data {
         this.status = status;
     }
 
-    public List<DataExample> getResponse() {
+    public List<DataAboutPost> getResponse() {
         return response;
     }
 
-    public void setResponse(List<DataExample> response) {
+    public void setResponse(List<DataAboutPost> response) {
         this.response = response;
     }
 

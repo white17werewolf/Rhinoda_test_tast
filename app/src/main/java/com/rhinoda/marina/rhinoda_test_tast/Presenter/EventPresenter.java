@@ -7,7 +7,8 @@ import com.rhinoda.marina.rhinoda_test_tast.R;
 import com.rhinoda.marina.rhinoda_test_tast.model.IPostApi;
 import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 import com.rhinoda.marina.rhinoda_test_tast.model.forJson.Data;
-import com.rhinoda.marina.rhinoda_test_tast.model.forJson.DataExample;
+import com.rhinoda.marina.rhinoda_test_tast.model.forJson.DataAboutPost;
+import com.rhinoda.marina.rhinoda_test_tast.model.forJson.UserData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class EventPresenter implements IEventPresenter {
 
     private IEvenView evenView;
-    List<DataExample> dataExample;
+    List<DataAboutPost> dataExample;
+    UserData currentUser;
 
     Data dataJson;
 
@@ -45,12 +47,16 @@ public class EventPresenter implements IEventPresenter {
                 dataJson = response.body();
                 dataExample =  dataJson.getResponse();
 
-               for(DataExample currentPost:dataExample){
+
+
+               for(DataAboutPost currentPost:dataExample){
+                   currentUser = currentPost.getUserData();
+
                    data.add(new Post(
-                           "Name Surame",
+                           currentUser.getName(),
                            String.valueOf(currentPost.getDate()),
                            currentPost.getText(),
-                           "Peoples",
+                           currentUser.getName(), //НАПИСАТЬ ОТДЕЛЬНУЮ МОДЕЛЬ ДЛЯ ЛАЙКНУВШИХ
                            currentPost.getLikes(),
                            currentPost.getCommentCount(),
                            currentPost.getComplaint(),
