@@ -39,6 +39,4 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.7.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
 
-/*    implementation'org.activiti:activiti-json-converter:7.1.0.M5'*/
-
 }

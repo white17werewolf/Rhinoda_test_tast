@@ -18,63 +18,59 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 public class EventPresenter implements IEventPresenter {
 
-    private IEvenView evenView;
-    List<DataAboutPost> dataExample;
-    UserData currentUser;
-
-    Data dataJson;
+        private IEvenView evenView;
+        List<DataAboutPost> dataExample;
+        UserData currentUser;
+        Data dataJson;
 
     public EventPresenter(IEvenView evenView){ this.evenView = evenView;}
 
-    public void getData() {
-        List<Post> data = new ArrayList<>();
+        public void getData() {
+            List<Post> data = new ArrayList<>();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(IPostApi.URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(IPostApi.URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
-        IPostApi api = retrofit.create(IPostApi.class);
-        Call<Data> call = api.getDataWeb();
+            IPostApi api = retrofit.create(IPostApi.class);
+            Call<Data> call = api.getDataWeb();
 
-        call.enqueue(new Callback<Data>() {
+            call.enqueue(new Callback<Data>() {
 
-            @Override
-            public void onResponse(Call<Data> call, Response<Data> response) {
-                dataJson = response.body();
-                dataExample =  dataJson.getResponse();
+                @Override
+                public void onResponse(Call<Data> call, Response<Data> response) {
+                    dataJson = response.body();
+                    dataExample =  dataJson.getResponse();
 
+                    for(DataAboutPost currentPost:dataExample){
+                        currentUser = currentPost.getUserData();
 
+                        data.add(new Post(
+                                currentUser.getName(),
+                                String.valueOf(currentPost.getDate()),
+                                currentPost.getText(),
+                                currentUser.getName(), //НАПИСАТЬ ОТДЕЛЬНУЮ МОДЕЛЬ ДЛЯ ЛАЙКНУВШИХ
+                                currentPost.getLikes(),
+                                currentPost.getCommentCount(),
+                                currentPost.getComplaint(),
+                                //currentPost.getImage(),
+                                //currentPost.getImageSmall());
+                                R.drawable.bg_post_event,
+                                R.drawable.bg_post_event));
 
-               for(DataAboutPost currentPost:dataExample){
-                   currentUser = currentPost.getUserData();
+                        evenView.update(data);
+                    }
+                    Log.d("ok ", "ok");
+                }
 
-                   data.add(new Post(
-                           currentUser.getName(),
-                           String.valueOf(currentPost.getDate()),
-                           currentPost.getText(),
-                           currentUser.getName(), //НАПИСАТЬ ОТДЕЛЬНУЮ МОДЕЛЬ ДЛЯ ЛАЙКНУВШИХ
-                           currentPost.getLikes(),
-                           currentPost.getCommentCount(),
-                           currentPost.getComplaint(),
-                           //currentPost.getImage(),
-                           //currentPost.getImageSmall());
-                           R.drawable.bg_post_event,
-                           R.drawable.bg_post_event));
+                @Override
+                public void onFailure(Call<Data> call, Throwable t) {
+                    Log.d("Wasted ", t.getMessage());
+                }
+            });
+        }
 
-                   evenView.update(data);
-               }
-               Log.d("ok ", "ok");
-            }
-
-            @Override
-            public void onFailure(Call<Data> call, Throwable t) {
-                Log.d("Wasted ", t.getMessage());
-            }
-        });
     }
-
-}

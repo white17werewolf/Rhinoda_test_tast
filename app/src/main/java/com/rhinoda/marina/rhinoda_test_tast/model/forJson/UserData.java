@@ -1,6 +1,5 @@
 package com.rhinoda.marina.rhinoda_test_tast.model.forJson;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -33,6 +32,9 @@ public class UserData {
     @SerializedName("avatar_small")
     @Expose
     private String avatarSmall;
+    @SerializedName("vip")
+    @Expose
+    private Integer vip;
 
     public Integer getUid() {
         return uid;
@@ -104,6 +106,14 @@ public class UserData {
 
     public void setAvatarSmall(String avatarSmall) {
         this.avatarSmall = avatarSmall;
+    }
+
+    public Integer getVip() {
+        return vip;
+    }
+
+    public void setVip(Integer vip) {
+        this.vip = vip;
     }
 
 }
