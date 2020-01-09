@@ -10,6 +10,7 @@ public class Data {
     @SerializedName("status")
     @Expose
     private Integer status;
+
     @SerializedName("response")
     @Expose
     private List<DataAboutPost> response;

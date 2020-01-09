@@ -9,6 +9,8 @@ import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 import com.rhinoda.marina.rhinoda_test_tast.model.forJson.Data;
 import com.rhinoda.marina.rhinoda_test_tast.model.forJson.DataAboutPost;
 import com.rhinoda.marina.rhinoda_test_tast.model.forJson.UserData;
+import com.rhinoda.marina.rhinoda_test_tast.model.forJson.UserDataLikes;
+import com.rhinoda.marina.rhinoda_test_tast.model.forJson.UserDataLikesList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +24,15 @@ public class EventPresenter implements IEventPresenter {
 
         private IEvenView evenView;
         List<DataAboutPost> dataExample;
-        UserData currentUser;
         Data dataJson;
+        UserData currentUser;
+
+
+        UserDataLikesList currentLikes;
+        List<UserDataLikes> likesList;
+
+        UserDataLikes tmp;
+
 
     public EventPresenter(IEvenView evenView){ this.evenView = evenView;}
 
@@ -45,14 +54,20 @@ public class EventPresenter implements IEventPresenter {
                     dataJson = response.body();
                     dataExample =  dataJson.getResponse();
 
+
                     for(DataAboutPost currentPost:dataExample){
                         currentUser = currentPost.getUserData();
+                        //likesList = currentLikes.getUserLikesList();//ПОЛУЧИТЬ ПУЛЛ ЛАЙКЕРОВ
+                        //System.out.println(likesList);
+                        currentPost.getDate();
+
 
                         data.add(new Post(
                                 currentUser.getName(),
-                                String.valueOf(currentPost.getDate()),
+                                currentPost.getDate(),
                                 currentPost.getText(),
                                 currentUser.getName(), //НАПИСАТЬ ОТДЕЛЬНУЮ МОДЕЛЬ ДЛЯ ЛАЙКНУВШИХ
+                                //String.valueOf(likesList.size()),
                                 currentPost.getLikes(),
                                 currentPost.getCommentCount(),
                                 currentPost.getComplaint(),

@@ -43,6 +43,8 @@
                     android:id="@+id/txtName"
                     style="@style/TextView.Name"
                     android:text="Name Surname"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/imgAvatar"

@@ -92,29 +92,6 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
             callback.comment(Integer.parseInt(recycleItem.getTxtComments()));
             holder.txtComments.setText(recycleItem.getTxtComments());
         });
-
-
-
-
-       /* holder.txtShare.setOnClickListener(v->{
-            if (recycleItem.isShare){
-                int share = Integer.parseInt(recycleItem.getTxtShare())-1;
-                recycleItem.setTxtShare(share);
-                recycleItem.isShare = false;
-                callback.share(Integer.parseInt(recycleItem.getTxtShare()));
-                holder.txtShare.setText(recycleItem.getTxtShare());
-            }
-
-            else {
-                int share = Integer.parseInt(recycleItem.getTxtShare())+1;
-                recycleItem.setTxtShare(share);
-                recycleItem.isComment = true;
-                callback.share(Integer.parseInt(recycleItem.getTxtShare()));
-                holder.txtShare.setText(recycleItem.getTxtShare());
-            }
-
-
-        });*/
     }
 
     @Override

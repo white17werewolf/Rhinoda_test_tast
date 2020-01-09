@@ -3,6 +3,8 @@ package com.rhinoda.marina.rhinoda_test_tast.model.forJson;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Date;
+
 public class DataAboutPost  {
 
     @SerializedName("post_id")
@@ -115,9 +117,42 @@ public class DataAboutPost  {
         this.like = like;
     }
 
+
+    //////////////////////////////****************************DATA*********************//////////////////////////////////////////////////
+
+
+
     public String getDate() {
-        return date;
+         Long tmp = Long.parseLong(date);
+         Date thisDate = new Date(tmp*1000);
+         Date today = new Date();
+
+        String hour = String.valueOf(thisDate.getHours());
+        String minute = String.valueOf(thisDate.getMinutes());
+
+        if(thisDate.getMinutes()<10){
+            minute = "0" + thisDate.getMinutes();
+        }
+
+        if(thisDate.getHours()<10){
+            hour = "0" + thisDate.getHours();
+        }
+
+        //DataAboutPost thisPost = new DataAboutPost();
+
+        if(thisDate.getDay() == today.getDay()){
+            return "Сегодня в " + hour+":"+minute;
+        }
+        else if (thisDate.getDay() == today.getDay()-1) {return "Вчера в " + hour+":"+minute; }
+        else return thisDate.getDate() + " " + thisDate.getMonth() + " в " + hour+":"+minute;
     }
+
+
+    /*public String getRightTime(){
+
+
+        return hour+minute;
+    }*/
 
     public void setDate(String date) {
         this.date = date;
