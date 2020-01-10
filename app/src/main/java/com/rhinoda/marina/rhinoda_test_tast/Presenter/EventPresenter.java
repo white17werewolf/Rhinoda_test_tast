@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
+import com.rhinoda.marina.rhinoda_test_tast.EventAdapter;
 import com.rhinoda.marina.rhinoda_test_tast.IEvenView;
 import com.rhinoda.marina.rhinoda_test_tast.R;
 import com.rhinoda.marina.rhinoda_test_tast.model.IPostApi;
@@ -29,12 +30,13 @@ public class EventPresenter implements IEventPresenter {
         List<DataAboutPost> dataExample;
         Data dataJson;
         UserData currentUser;
+        EventAdapter eventAdapter = new EventAdapter();
 
 
         UserDataLikesList currentLikes;
         List<UserDataLikes> likesList;
-
         UserDataLikes tmp;
+
 
 
     public EventPresenter(IEvenView evenView){ this.evenView = evenView;}
@@ -59,18 +61,22 @@ public class EventPresenter implements IEventPresenter {
                     dataExample =  dataJson.getResponse();
 
 
+
                     for(DataAboutPost currentPost:dataExample){
                         currentUser = currentPost.getUserData();
+                        String time = eventAdapter.convertDate(currentPost.getDate());
                         //likesList = currentLikes.getUserLikesList();//ПОЛУЧИТЬ ПУЛЛ ЛАЙКЕРОВ
                         //System.out.println(likesList);
                         //currentPost.getDate();
+                        //System.out.println("HEEEEEEEEEEREEEEEE  \n \n \n" + currentPost.getDate());
+                        System.out.println("HEEEEEEEEEEREEEEEE  \n" + eventAdapter.convertDate(currentPost.getDate()));
 
                         data.add(new Post(
                                 currentUser.getName(),
-                                currentPost.getDate(),
+                                eventAdapter.convertDate(currentPost.getDate()),
+                                //currentPost.getDate(), //ЗАМЕНИТЬ НА НОВУЮ ДАТУ
                                 currentPost.getText(),
                                 currentUser.getName(), //НАПИСАТЬ ОТДЕЛЬНУЮ МОДЕЛЬ ДЛЯ ЛАЙКНУВШИХ
-                                //String.valueOf(likesList.size()),
                                 currentPost.getLikes(),
                                 currentPost.getCommentCount(),
                                 currentPost.getComplaint(),

@@ -1,18 +1,7 @@
 package com.rhinoda.marina.rhinoda_test_tast.model.forJson;
 
-import android.icu.util.GregorianCalendar;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import java.time.Month;
-import java.time.format.TextStyle;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 public class DataAboutPost  {
 
@@ -129,50 +118,34 @@ public class DataAboutPost  {
 
     //////////////////////////////****************************DATA*********************//////////////////////////////////////////////////
 
+    public String getDate() {return date;
 
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-
-
-    public String getDate() {//return date;
-
-        Long tmp = Long.parseLong(date);
-        //Calendar calendar = new GregorianCalendar();
-        //Calendar today = new GregorianCalendar();
-
-        /* START
-        GregorianCalendar calendar = new GregorianCalendar();
-        Date date = new Date();*/
-
-        Calendar calendar = Calendar.getInstance();
-        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E MMM dd HH:HH:HH zZ Y");
-        Date date = new Date(tmp*1000);
-        //String dateString = String.valueOf(date);
-        calendar.setTime(date);
-
-         System.out.println("DAAAAAAATE        " + "\n" + calendar);
-
-        GregorianCalendar today = new GregorianCalendar();
-        Month month = Month.of(calendar.get(Calendar.MONTH)+1);
-        String monthRus = month.getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru"));
-
-        boolean thisDate =  calendar.get(Calendar.YEAR)==today.get(Calendar.YEAR) && calendar.get(Calendar.MONTH)==today.get(Calendar.MONTH)+1;
-        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
-        String minute = String.valueOf(calendar.get(Calendar.MINUTE));
-
-        if(calendar.get(Calendar.MINUTE)<10){
-            minute = "0" + calendar.get(Calendar.MINUTE);
-        }
-
-        if(calendar.get(Calendar.HOUR_OF_DAY)<10){
-            hour = "0" + calendar.get(Calendar.HOUR_OF_DAY);
-        }
-
-        if(calendar.get(Calendar.DAY_OF_MONTH)==today.get(Calendar.DAY_OF_MONTH) && thisDate){
-            return "Сегодня в " + hour+ ":"+ minute;
-        }
-        else  if(calendar.get(Calendar.DAY_OF_MONTH)==today.get(Calendar.DAY_OF_MONTH)-1 && thisDate){ return "Вчера в " + hour+":"+minute;}
-        else return calendar.get(Calendar.DAY_OF_MONTH) + " " + monthRus + " в " + hour+":"+minute; }
+//        Long tmp = Long.parseLong(date);
+//        Calendar calendar = Calendar.getInstance();
+//        Date date = new Date(tmp*1000);
+//        calendar.setTime(date);
+//        GregorianCalendar today = new GregorianCalendar();
+//        Month month = Month.of(calendar.get(Calendar.MONTH)+1);
+//        String monthRus = month.getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru"));
+//
+//        boolean thisDate =  calendar.get(Calendar.YEAR)==today.get(Calendar.YEAR) && calendar.get(Calendar.MONTH)==today.get(Calendar.MONTH)+1;
+//        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
+//        String minute = String.valueOf(calendar.get(Calendar.MINUTE));
+//
+//        if(calendar.get(Calendar.MINUTE)<10){
+//            minute = "0" + calendar.get(Calendar.MINUTE);
+//        }
+//
+//        if(calendar.get(Calendar.HOUR_OF_DAY)<10){
+//            hour = "0" + calendar.get(Calendar.HOUR_OF_DAY);
+//        }
+//
+//        if(calendar.get(Calendar.DAY_OF_MONTH)==today.get(Calendar.DAY_OF_MONTH) && thisDate){
+//            return "Сегодня в " + hour+ ":"+ minute;
+//        }
+//        else  if(calendar.get(Calendar.DAY_OF_MONTH)==today.get(Calendar.DAY_OF_MONTH)-1 && thisDate){ return "Вчера в " + hour+":"+minute;}
+//        else return calendar.get(Calendar.DAY_OF_MONTH) + " " + monthRus + " в " + hour+":"+minute;
+       }
 
     public void setDate(String date) {
         this.date = date;
