@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
 //item 1.11
         img.setOnClickListener(v -> startActivity(intent));
 
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Api.URL)
                 .addConverterFactory(GsonConverterFactory.create())

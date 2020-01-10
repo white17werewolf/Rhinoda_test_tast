@@ -1,6 +1,9 @@
 package com.rhinoda.marina.rhinoda_test_tast.Presenter;
 
+import android.os.Build;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 import com.rhinoda.marina.rhinoda_test_tast.IEvenView;
 import com.rhinoda.marina.rhinoda_test_tast.R;
@@ -49,6 +52,7 @@ public class EventPresenter implements IEventPresenter {
 
             call.enqueue(new Callback<Data>() {
 
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onResponse(Call<Data> call, Response<Data> response) {
                     dataJson = response.body();
@@ -59,8 +63,7 @@ public class EventPresenter implements IEventPresenter {
                         currentUser = currentPost.getUserData();
                         //likesList = currentLikes.getUserLikesList();//ПОЛУЧИТЬ ПУЛЛ ЛАЙКЕРОВ
                         //System.out.println(likesList);
-                        currentPost.getDate();
-
+                        //currentPost.getDate();
 
                         data.add(new Post(
                                 currentUser.getName(),

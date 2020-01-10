@@ -26,9 +26,7 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_default_page_activity);
-
         ButterKnife.bind(this);
-
         SecondActivityAdapter myAdapter = new SecondActivityAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myAdapter);
         bottomNavMenu.setOnNavigationItemSelectedListener(this);
