@@ -61,7 +61,6 @@ public class EventFragment extends Fragment implements IEvenView, IActionView {
         eventAdapter.update(items);
     }
 
-    ///////////////////////////
     @Override
     public void like(int likeNumber) {
         Toast.makeText(getContext(), "You have "+likeNumber+" likes", Toast.LENGTH_SHORT).show();

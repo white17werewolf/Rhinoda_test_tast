@@ -79,19 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
         Api api = retrofit.create(Api.class);
         Call<JsonTest> call = api.getJson("0");
-
-        /* ****************** TEST
-            call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.d("name", "onResponse");
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.d("name", "onFailure");
-            }
-        });*/ 
         
         call.enqueue(new Callback<JsonTest>() {
             @Override

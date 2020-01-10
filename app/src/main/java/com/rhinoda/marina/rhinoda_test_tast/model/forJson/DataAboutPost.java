@@ -115,37 +115,7 @@ public class DataAboutPost  {
         this.like = like;
     }
 
-
-    //////////////////////////////****************************DATA*********************//////////////////////////////////////////////////
-
-    public String getDate() {return date;
-
-//        Long tmp = Long.parseLong(date);
-//        Calendar calendar = Calendar.getInstance();
-//        Date date = new Date(tmp*1000);
-//        calendar.setTime(date);
-//        GregorianCalendar today = new GregorianCalendar();
-//        Month month = Month.of(calendar.get(Calendar.MONTH)+1);
-//        String monthRus = month.getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru"));
-//
-//        boolean thisDate =  calendar.get(Calendar.YEAR)==today.get(Calendar.YEAR) && calendar.get(Calendar.MONTH)==today.get(Calendar.MONTH)+1;
-//        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
-//        String minute = String.valueOf(calendar.get(Calendar.MINUTE));
-//
-//        if(calendar.get(Calendar.MINUTE)<10){
-//            minute = "0" + calendar.get(Calendar.MINUTE);
-//        }
-//
-//        if(calendar.get(Calendar.HOUR_OF_DAY)<10){
-//            hour = "0" + calendar.get(Calendar.HOUR_OF_DAY);
-//        }
-//
-//        if(calendar.get(Calendar.DAY_OF_MONTH)==today.get(Calendar.DAY_OF_MONTH) && thisDate){
-//            return "Сегодня в " + hour+ ":"+ minute;
-//        }
-//        else  if(calendar.get(Calendar.DAY_OF_MONTH)==today.get(Calendar.DAY_OF_MONTH)-1 && thisDate){ return "Вчера в " + hour+":"+minute;}
-//        else return calendar.get(Calendar.DAY_OF_MONTH) + " " + monthRus + " в " + hour+":"+minute;
-       }
+    public String getDate() {return date;       }
 
     public void setDate(String date) {
         this.date = date;

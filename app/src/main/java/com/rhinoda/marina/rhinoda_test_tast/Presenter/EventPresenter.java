@@ -67,14 +67,10 @@ public class EventPresenter implements IEventPresenter {
                         String time = eventAdapter.convertDate(currentPost.getDate());
                         //likesList = currentLikes.getUserLikesList();//ПОЛУЧИТЬ ПУЛЛ ЛАЙКЕРОВ
                         //System.out.println(likesList);
-                        //currentPost.getDate();
-                        //System.out.println("HEEEEEEEEEEREEEEEE  \n \n \n" + currentPost.getDate());
-                        System.out.println("HEEEEEEEEEEREEEEEE  \n" + eventAdapter.convertDate(currentPost.getDate()));
 
                         data.add(new Post(
                                 currentUser.getName(),
                                 eventAdapter.convertDate(currentPost.getDate()),
-                                //currentPost.getDate(), //ЗАМЕНИТЬ НА НОВУЮ ДАТУ
                                 currentPost.getText(),
                                 currentUser.getName(), //НАПИСАТЬ ОТДЕЛЬНУЮ МОДЕЛЬ ДЛЯ ЛАЙКНУВШИХ
                                 currentPost.getLikes(),

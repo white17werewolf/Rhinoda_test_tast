@@ -40,8 +40,6 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         notifyDataSetChanged();
     }
 
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
