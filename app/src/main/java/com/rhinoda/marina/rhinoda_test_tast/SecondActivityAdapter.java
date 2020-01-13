@@ -20,6 +20,7 @@ public class SecondActivityAdapter extends FragmentPagerAdapter {
             case 0: return new LoginFragment();
             case 1: return new EventFragment();
             case 2: return new ProfileFragment();
+            //case 3: return new GroupFragment();
             default: return null;
         }
     }

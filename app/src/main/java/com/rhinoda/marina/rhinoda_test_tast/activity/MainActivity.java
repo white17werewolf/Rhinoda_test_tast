@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.rhinoda.marina.rhinoda_test_tast.R;
 import com.rhinoda.marina.rhinoda_test_tast.try_retrofit.Api;
 import com.rhinoda.marina.rhinoda_test_tast.try_retrofit.JsonTest;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -70,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 btn.setText(editTxt.getText());} });
 
 //item 1.11
+
+        String imageUri = "https://www.meme-arsenal.com/memes/e0640caa49009147a3d3ca3a99b65c3d.jpg";
+        Picasso.get().load(imageUri).into((ImageView) findViewById(R.id.imageView));
+
         img.setOnClickListener(v -> startActivity(intent));
 
         Retrofit retrofit = new Retrofit.Builder()

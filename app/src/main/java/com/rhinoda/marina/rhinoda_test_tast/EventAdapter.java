@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 
 import java.time.Month;
@@ -59,9 +60,11 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         holder.txtLikes.setText(recycleItem.getTxtLikes());
         holder.txtComments.setText(recycleItem.getTxtComments());
         holder.txtShare.setText(recycleItem.getTxtShare());
-        holder.imgAvatar.setImageResource(recycleItem.getImgAvatar());
-        holder.imgPost.setImageResource(recycleItem.getImgPost());
 
+        getImage(recycleItem.getImgAvatar(), holder.imgAvatar);
+        getImage(recycleItem.getImgPost(), holder.imgPost);
+
+        System.out.println("\nAVATAR  \n"+recycleItem.getImgAvatar()+"\nPOST        \n"+recycleItem.getImgPost());
 
         holder.txtLikes.setOnClickListener(v->{
             if (recycleItem.isLike){
@@ -100,6 +103,23 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         });
     }
 
+
+    /*******************************************************************
+     **********************         IMAGES           ********************
+     ********************************************************************/
+
+    public void getImage(String imgAddress, ImageView image){
+
+        //Picasso.get().load(imgAddress).into(image);
+
+        Glide
+                .with(image)
+                .load(imgAddress)
+                .placeholder(R.drawable.bg_post_event)
+                .error(R.drawable.mcw)
+                .into(image);
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String convertDate(String date){
 
@@ -129,6 +149,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         else  if(calendar.get(Calendar.DAY_OF_MONTH)==today.get(Calendar.DAY_OF_MONTH)-1 && thisDate){ return "Вчера в " + hour+":"+minute;}
         else return calendar.get(Calendar.DAY_OF_MONTH) + " " + monthRus + " в " + hour+":"+minute;
     }
+
 
     @Override
     public int getItemCount() {

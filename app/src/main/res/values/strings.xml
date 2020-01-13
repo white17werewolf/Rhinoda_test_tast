@@ -3,6 +3,11 @@
     <string name="login">Login</string>
     <string name="events">Events</string>
     <string name="profile">Profile</string>
+
+    <string name="allGroups">Все группы</string>
+    <string name="myGroups">Мои группы</string>
+    <string name="invitations">Приглашения</string>
+
     <string name="items">
         <item>Item 1</item>
         <item>Item 2</item>

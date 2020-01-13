@@ -8,7 +8,7 @@ public interface IPost {
     String getTxtLikes();
     String getTxtComments();
     String getTxtShare();
-    int getImgAvatar();
-    int getImgPost();
+    String getImgAvatar();
+    String getImgPost();
 
 }

@@ -7,7 +7,6 @@ import androidx.annotation.RequiresApi;
 
 import com.rhinoda.marina.rhinoda_test_tast.EventAdapter;
 import com.rhinoda.marina.rhinoda_test_tast.IEvenView;
-import com.rhinoda.marina.rhinoda_test_tast.R;
 import com.rhinoda.marina.rhinoda_test_tast.model.IPostApi;
 import com.rhinoda.marina.rhinoda_test_tast.model.Post;
 import com.rhinoda.marina.rhinoda_test_tast.model.forJson.Data;
@@ -60,13 +59,8 @@ public class EventPresenter implements IEventPresenter {
                     dataJson = response.body();
                     dataExample =  dataJson.getResponse();
 
-
-
                     for(DataAboutPost currentPost:dataExample){
                         currentUser = currentPost.getUserData();
-                        String time = eventAdapter.convertDate(currentPost.getDate());
-                        //likesList = currentLikes.getUserLikesList();//ПОЛУЧИТЬ ПУЛЛ ЛАЙКЕРОВ
-                        //System.out.println(likesList);
 
                         data.add(new Post(
                                 currentUser.getName(),
@@ -76,10 +70,15 @@ public class EventPresenter implements IEventPresenter {
                                 currentPost.getLikes(),
                                 currentPost.getCommentCount(),
                                 currentPost.getComplaint(),
-                                //currentPost.getImage(),
-                                //currentPost.getImageSmall());
-                                R.drawable.bg_post_event,
-                                R.drawable.bg_post_event));
+                                currentPost.getImage(),
+                                currentPost.getImageSmall()));
+
+
+//                                "dfhjdfh","fdddfhd"));
+
+
+//                                eventAdapter.getImage(currentPost.getImage(),  ),
+//                                eventAdapter.getImage(currentPost.getImageSmall(), )));
 
                         evenView.update(data);
                     }

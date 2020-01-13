@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/allGroups"
+        android:id="@+id/bottomGroupsAll"/>
+    <item android:title="@string/myGroups"
+        android:id="@+id/bottomGroupsMy"/>
+    <item android:title="@string/invitations"
+        android:id="@+id/bottomGroupsInvitations"/>
+</menu>

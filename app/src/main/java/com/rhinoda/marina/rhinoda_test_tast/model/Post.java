@@ -9,8 +9,8 @@ public class Post implements IPost{
     private int txtLikes;
     private int txtComments;
     private int txtShare;
-    private int imgAvatar;
-    private int imgPost;
+    private String imgAvatar;
+    private String imgPost;
     public boolean isLike = false;
     public boolean isComment = false;
     public boolean isShare = false;
@@ -22,9 +22,8 @@ public class Post implements IPost{
                 int txtLikes,
                 int txtComments,
                 int txtShare,
-                int imgAvatar,
-                int imgPost) {
-
+                String imgAvatar,
+                String imgPost) {
 
         this.txtName = txtName;
         this.txtDate = txtDate;
@@ -42,7 +41,6 @@ public class Post implements IPost{
     public String getTxtDate() {return txtDate;}
     public void setTxtData(String data) {txtDate = data;}
 
-
     public String getTxtPost() {return txtPost;}
     public void setTxtPost(String post) {txtPost=post;}
 
@@ -58,10 +56,10 @@ public class Post implements IPost{
     public String getTxtShare() {return String.valueOf(txtShare);}
     public void setTxtShare(int share) {txtLikes=share;}
 
-    public int getImgAvatar() {return imgAvatar;}
-    public void setImgAvatar(int avatar) {imgAvatar = avatar;}
+    public String getImgAvatar() { return imgAvatar;}
+    public void setImgAvatar(String avatar) {imgAvatar = avatar;}
 
-    public int getImgPost() {return imgPost;}
-    public void setImgPost(int post) {imgPost=post;}
+    public String getImgPost() {return imgPost;}
+    public void setImgPost(String post) {imgPost=post;}
 
 }
