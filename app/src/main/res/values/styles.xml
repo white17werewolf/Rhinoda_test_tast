@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -86,7 +86,7 @@
         <item name="android:layout_weight">0</item>
     </style>
 
-    <style name="Button">
+    <style name="ButtonProfile">
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:background">@drawable/button_style_profile</item>
         <item name="android:textAllCaps">false</item>
@@ -116,4 +116,34 @@
         <item name="android:layout_height">30dp</item>
     </style>
 
+    <style name="TextView.GroupName">
+        <item name="android:textColor">@color/colorLightRed</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">Fantasy</item>
+    </style>
+
+    <style name="TextView.NumberMembers">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">Fantasy</item>
+        <item name="android:textColor">@color/colorDarkGrey</item>
+    </style>
+
+    <style name="ButtonGroups">
+        <item name="android:background">@drawable/button_groups</item>
+        <item name="android:textColor">@color/colorLightRed</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="ButtonGroupsLeft">
+        <item name="android:background">@drawable/button_radius_left</item>
+        <item name="android:textColor">@color/colorLightRed</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="ButtonGroupsRight">
+        <item name="android:background">@drawable/button_radius_right</item>
+        <item name="android:textColor">@color/colorLightRed</item>
+        <item name="android:textSize">14dp</item>
+    </style>
 </resources>

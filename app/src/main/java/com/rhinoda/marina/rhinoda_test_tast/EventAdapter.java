@@ -64,7 +64,7 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
         getImage(recycleItem.getImgAvatar(), holder.imgAvatar);
         getImage(recycleItem.getImgPost(), holder.imgPost);
 
-        System.out.println("\nAVATAR  \n"+recycleItem.getImgAvatar()+"\nPOST        \n"+recycleItem.getImgPost());
+       // System.out.println("\nAVATAR  \n"+recycleItem.getImgAvatar()+"\nPOST        \n"+recycleItem.getImgPost());
 
         holder.txtLikes.setOnClickListener(v->{
             if (recycleItem.isLike){
@@ -102,7 +102,6 @@ public class EventAdapter extends RecyclerView.Adapter <EventAdapter.ViewHolder>
             holder.txtComments.setText(recycleItem.getTxtComments());
         });
     }
-
 
     /*******************************************************************
      **********************         IMAGES           ********************

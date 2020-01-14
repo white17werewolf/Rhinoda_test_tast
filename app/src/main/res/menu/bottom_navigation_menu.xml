@@ -9,4 +9,7 @@
     <item android:title="@string/profile"
         android:id="@+id/bottomNavProfile"
         android:icon="@drawable/ic_accessibility_black_24dp"/>
+    <item android:title="@string/groups"
+        android:id="@+id/bottomNavGroups"
+        android:icon="@drawable/ic_people"/>
 </menu>

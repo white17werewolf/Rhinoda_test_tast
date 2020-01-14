@@ -90,11 +90,11 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<JsonTest> call, Response<JsonTest> response) {
                 JsonTest   t = response.body();
                 //JsonTest t = new JsonTest(tmp.string());
-                   Log.d("Address ", t.getAddress());
+                  /* Log.d("Address ", t.getAddress());
                     Log.d("Email ", t.getEmail());
                     Log.d("Full name ", t.getFull_name());
                     Log.d("ID", String.valueOf(t.getId()));
-                    Log.d("Short name", t.getShort_name());
+                    Log.d("Short name", t.getShort_name());*/
             }
 
          @Override

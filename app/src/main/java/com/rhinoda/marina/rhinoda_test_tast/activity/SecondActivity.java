@@ -44,6 +44,9 @@ public class SecondActivity extends AppCompatActivity implements BottomNavigatio
             case R.id.bottomNavProfile:
                 viewPager.setCurrentItem(2);
                 break;
+            case R.id.bottomNavGroups:
+                viewPager.setCurrentItem(3);
+                break;
         }
         return true;
     }

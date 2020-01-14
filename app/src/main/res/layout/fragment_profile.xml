@@ -25,7 +25,7 @@
             android:background="@drawable/ic_arrow_left_black"/>
 
         <TextView
-            android:id="@+id/txtNickname"
+            android:id="@+id/txtGroupName"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="dimazaycev"
@@ -33,7 +33,7 @@
             android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/btnMore"
+            android:id="@+id/btnWrite"
             style="@style/TopNavButton"
             android:background="@drawable/ic_more_horiz_black"/>
     </LinearLayout>
@@ -256,13 +256,13 @@
         android:padding="10dp">
 
         <Button
-            style="@style/Button"
+            style="@style/ButtonProfile"
             android:id="@+id/btnWriteMessage"
             android:layout_weight="1"
             android:text="Написать" />
 
         <Button
-            style="@style/Button"
+            style="@style/ButtonProfile"
             android:id="@+id/btnAddFriend"
             android:layout_weight="1"
             android:text="Добавить в друзья"

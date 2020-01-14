@@ -3,6 +3,7 @@
     <string name="login">Login</string>
     <string name="events">Events</string>
     <string name="profile">Profile</string>
+    <string name="groups">Groups</string>
 
     <string name="allGroups">Все группы</string>
     <string name="myGroups">Мои группы</string>
